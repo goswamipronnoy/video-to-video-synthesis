@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116539120-3"></script> -->
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-116539120-3');
+	</script>
+
+	<meta charset="utf-8">
+	<title>Awesome Video Object Segmentation</title>
+	<meta name="description" content="Awesome Video Object Segmentation">
+	<!-- <meta name="author" content="CVL"> -->
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+	<!-- CSS
+	================================================== -->
+	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Custom Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="css/menu.css">
+	<script src="js/jquery1111.min.js" type="text/javascript"></script>
+	<script src="js/script.js"></script>
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<!-- Add smooth transition -->
+	<script>
+		$(document).ready(function () {
+			// Add smooth scrolling to all links
+			$("a").on('click', function (event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash
+					var hash = this.hash;
+
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
+
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if
+			});
+		});
+	</script>
+
+	<style type="text/css">
+		/*********************************
+    The list of publication items
+    *********************************/
+		/* The list of items */
+		.biblist {}
+
+		/* The item */
+		.biblist li {}
+
+		/* You can define custom styles for plstyle field here. */
+
+
+		/*************************************
+     The box that contain BibTeX code
+     *************************************/
+		div.noshow {
+			display: none;
+		}
+
+		div.bibtex {
+			margin-right: 0%;
+			margin-top: 1.2em;
+			margin-bottom: 1.3em;
+			border: 1px solid silver;
+			padding: 0.3em 0.5em;
+			background: #ffffee;
+		}
+
+		div.bibtex pre {
+			font-size: 75%;
+			overflow: auto;
+			width: 100%;
+		}
+
+
+		.content-subhead {
+			color: black
+		}
+
+		.btn-large {
+			text-transform: none;
+			background-color: #AAAAAA;
+		}
+
+		.round {
+			width: 100%;
+			padding-top: 100%;
+			overflow: hidden;
+			position: relative;
+			border-radius: 50%;
+		}
+
+		img.roundimg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			height: 100%;
+			transform: translate(-50%, -50%);
+			transition: 1s ease;
+		}
+	</style>
+
+	<script type="text/javascript">
+ < !--
+			// Toggle Display of BibTeX
+			function toggleBibtex(articleid) {
+				var bib = document.getElementById('bib_' + articleid);
+				if (bib) {
+					if (bib.className.indexOf('bibtex') != -1) {
+						bib.className.indexOf('noshow') == -1 ? bib.className = 'bibtex noshow' : bib.className = 'bibtex';
+					}
+				} else {
+					return;
+				}
+			}
+		-->
+	</script>
+</head>
+
+<body>
+	<div class="wrap-body">
+
+		<!--////////////////////////////////////Header-->
+		<header class="zerogrid">
+			<div id='cssmenu' class="align-center">
+				<ul>
+					<li class="active"><a href='index.html'><span>Home</span></a></li>
+					<!-- <li><a href='#publication'><span>Publication</span></a></li> -->
+					<li><a href='#about'><span>About</span></a></li>
+					<li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
+					<li><a href='#approach'><span>Approach</span></a></li>
+					<li><a href='#results'><span>Results</span></a></li>
+					<li><a href='#team'><span>Team</span></a></li>
+					<li><a href='#datasets'><span>Datasets</span></a></li>
+					<li><a href='#demo'><span>Demo Applications</span></a></li>
+					<li><a href='#TimeLine'><span>Time Line</span></a></li>
+				</ul>
+			</div>
+		</header>
+
+
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------content-box-2-------------------->
+				<section class="content-box box-2">
+					<div class="zerogrid">
+						<div class="row wrap-box">
+							<!--Start Box-->
+							<div class="header">
+								<hr class="line-2">
+								<h1>Awesome Video Object Segmentation</h1>
+								<span style="line-height: 1.2">A collection of all state of the art implementation of Video Object Segmentation
+									Approaches and their applications.</span>
+							</div>
+							<div class="row">
+								<div class="col-1-5 t-center">
+									<img src="images/parkour/00000_gt.png" style="width:98%" />
+								</div>
+								<div class="col-1-5 t-center">
+									<img src="images/parkour/00020_ours.png" style="width:98%" />
+								</div>
+								<div class="col-1-5 t-center">
+									<img src="images/parkour/00040_ours.png" style="width:98%" />
+								</div>
+								<div class="offsetonlyonmobile">
+								</div>
+								<div class="col-1-5 t-center">
+									<img src="images/parkour/00061_ours.png" style="width:98%" />
+								</div>
+
+								<div class="col-1-5 t-center">
+									<img src="images/parkour/00081_ours.png" style="width:98%" />
+								</div>
+							</div>
+							<article>
+					<div class="row">
+						
+									
+									<a href="https://github.com/sakshamgupta006/Awesome_Video_Object_Segmentation"style="padding-right: 2em"><img src="./images/github.png"
+											 alt="slides" width="
+											 30" height="60"></img>Repository </a>
+											 <a href="https://docs.google.com/presentation/d/1fL_SY6jyDygtnNN9HZjsaN_F0z_L3cfw5yw48ZNQDAw/edit?usp=sharing" style="padding-right: 2em"><img
+											 src="./images/google_slides.png" alt="slides" width="30" height="60"></img> Google Slides </a>
+									<a href="https://github.com/sakshamgupta006/Machine-Learned-Bokeh-Videos" style="padding-right: 2em"><img src="./images/github.png"
+											 alt="slides" width="
+											 30" height="60"></img>Bokeh Videos Application</a>
+								
+					</div>
+			</article>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+
+
+
+
+
+		<section class="content-box box-3" id="about">
+			<div class="zerogrid">
+				<article>
+					<div class="row t-center" style="line-height: 1.5">
+						<hr class="line-2">
+						<h2 style="margin-bottom:20px">About</h2>
+						<div>
+							<div style="text-align:justify; padding-top: 1em; padding-bottom: 2em;">
+								<span>
+										Segmentation is one of the most sort after problems in Computer Vision as they facilitate many applications like Augmented Reality, 
+										video editing etc. Video Object Segmentation is the holy grail of Segmentation and has seen huge influx of research papers in 
+										recent years. In this project, we plan to understand and implement all the major state-of-the-art VOS techniques using Tensorflow. 
+										Finally, we plan to create a standard go-to repository which can be used for setting up baselines and facilitating easy comparisons
+										on standard datasets with new research and models. The repository can found on Github as <a href="https://github.com/sakshamgupta006/Awesome_Video_Object_Segmentation">Awesome_Video_Object_Segmentation.</a>
+								</span>
+							</div>
+							<div style="text-align:left">
+								<h2 style="margin-bottom:20px; text-align:left">Motivation</h2>
+								<ul>
+									<li>1.	Availability of Large Datasets [DAVIS, Youtube-VOS].</li>
+									<li>2.	Availability of fast compute resources [GPU’s].</li>
+									<li>3.	Vast number of applications [Video Editing,  Augmented Reality].</li>
+								</ul>
+							</div>
+							<div style="text-align:left; padding-top: 2em">
+								<h2 style="margin-bottom:20px; text-align:left">Vision</h2>
+								<ul>
+										<li>1. Benchmark most of the state-of-the-art techniques into one single module.</li>
+										<li>2. Facilitate new research with easy training, testing and visualizations. </li>
+										<li>3. Create applications like targeted scene retro videos, machine learned portrait videos. </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+	</div>
+	</section>
+
+	<section class="content-box box-3" id="problemFormulation">
+			<div class="zerogrid">
+				<article>
+					<div class="row t-center" style="line-height: 1.5">
+						<hr class="line-2">
+						<h2 style="margin-bottom:20px">Problem Formulation</h2>
+						<div style="text-align:justify">
+							<div><b>Given: </b>One or few frames annotated with segmentation masks of a particular object instance from the dataset.</div>
+							<div><b>Task: </b>Accurately segment the same instance in all other frames of the video.</div>
+
+						</div>
+					</div>
+				</article>
+			</div>
+			</div>
+		</section>
+
+	<section class="content-box box-3" id="approach">
+		<div class="zerogrid">
+			<article>
+				<div class="row t-center" style="line-height: 1.5">
+					<hr class="line-2">
+					<h2 style="margin-bottom:20px">Approach</h2>
+					<div style="text-align:justify">
+							Since a lot of new research in the field of Video Object Segmentation (VOS) is taking place continuously, so we decided to create 
+							a standard Github repository Awesome_Video_Object_Segmentation, which will serve as a go-to repo for establishing previous baselines
+							on different datasets and models. Our main function take arguments like approach, dataset, models, weights etc. to produce accuracy scores and metrics so that easy comparison can be facilitated.
+					</div>
+					<div class="row" style="text-align:center; padding-top:2em">
+							<img width="800" height="420" src="images/plug_n_play.png"></img>
+							<figcaption>Figure: Plug 'n' Play Pipleline</figcaption>
+					<div style="padding-top: 2em">
+						<h2><b>Approaches Integrated</b></h2>
+					</div>
+					<div>
+				</div>
+
+				<div>
+					<div style="text-align: justify; padding-top: 1.5em">
+						<h2 style="margin-bottom:20px">1. OSVOS: One-Shot Video Object Segmentation</h2>
+						This research paper deals with the task of semi-supervised video object segmentation problem. It proposes One-Shot Video Segmentation method based on a fully-convolutional neural network which trans- fers the semantic information learned on ImageNet to solve the problem of background and foreground segmentation. It adapts a CNN that is pre-trained on image recognition for video object segmentation. Finally, it is fine-tuned on a particular object that is manually segmented in a frame.
+						<div style="padding-right: 2em; padding-top:1em; text-align:center">
+								<img width="420" height="420" src="images/OSVOS.png"></img>
+								<figcaption>Figure: OSVOS: One-Shot Video Object Segmentation</figcaption>
+						</div>
+					</div>
+
+					<div style="text-align: justify; padding-top: 1.5em">
+							<h2 style="margin-bottom:20px">2. MaskTrack: Learning Video Object Segmentation from static images</h2>
+							This research paper proposes a approach to solve the problem of VOS as a guided instance segmentation. It uses existing semantic labelling ConvNets and trains them for object segmentation for each frame of the video. It further solves the problem of instance level recognition using (a.) offline training, which guides the network towards the region of interest obtained from the previous frame mask, and (b.) online training, fine-tuning of attributes so that, the model learns the specific instance properly. Also, this method is agnostic of the annotation method making the system robust for various applications.
+							<div style="padding-right: 2em; padding-top:1em; text-align:center">
+									<img width="420" height="420" src="images/MaskTrack.png"></img>
+									<figcaption style="padding-top:0.5em">Figure: MaskTrack</figcaption>
+							</div>
+						</div>
+
+						<div style="text-align: justify; padding-top: 1.5em">
+								<h2 style="margin-bottom:20px">3. VS-ReID: Video Object Segmentation with Re-identification</h2>
+								<p>This research paper presents a framework (VS-ReID) to over- come the challenges of temporal continuity while propagating masks between the frames. These being (a.) drifting, and (b.) inabil- ity to handle large displacements which are solved by preventing the target from being lost using adaptive object re-identification.</p>
+								<p>The VS-ReID model consists of two modules. Firstly, a mask propagation module which transfers the probability map of the pre- dicted frames to the neighboring frames. Secondly, a reidentification module which retrieves the missing instances during the mask prop- agation process. After this, the work proposes an algorithm called VS-ReID that iteratively combines the previous two masks for all the instances of the video.</p>
+
+								<div style="padding-right: 2em; padding-top:1em; text-align:center">
+										<img width="420" height="420" src="images/vsreid.png"></img>
+										<figcaption style="padding-top:0.5em">Figure: VS-ReID: Video Object Segmentation with Re-identification</figcaption>
+								</div>
+						</div>
+
+						<div style="text-align: justify; padding-top: 1.5em">
+								<h2 style="margin-bottom:20px">4. MaskRNN: Instance Level Video Object Segmentation</h2>
+								<p>This paper uses recurrent neural networks motivated by the fact that frames are time-dependent in a video sequence. Since, the frames are time-dependent the prediction of the previous frame influences the prediction of the current frame. Then an optical flow is computed between the two frames. Further, this learned optical flow is fed to the N deep neural networks, one for each object, to warp the previous prediction to align with the current frame in the video.</p>
+								<p>Each deep neural network consists of two parts: (a.) a binary seg- mentation net, which predicts the segmentation mask to be applied and (b.) an object localization net, which performs the bounding box regression. Once, the segmentation mask and the bounding box regression are obtained they are further merged to create a binary segmentation mask. These binary segmentation’s are merged for each of the N objects at the time of testing using the argmax operation.</p>
+								<div style="padding-right: 2em; padding-top:1em; text-align:center">
+										<img width="420" height="420" src="images/MaskRNN.png"></img>
+										<figcaption style="padding-top:0.5em">Figure: MaskRNN</figcaption>
+								</div>
+						</div>
+				</div>
+				</div>
+			</article>
+		</div>
+		</div>
+	</section>
+
+	<section class="content-box box-3" id="team">
+			<div class="zerogrid">
+				<div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;">
+					<!--Start Box-->
+					<hr class="line-2">
+					<h2 style="margin-bottom:20px">Team</h2>
+					<article>
+						<div class="row">
+							<div class="column">
+								<div class="col-1-2 t-center">
+										<div class="wrap-col">
+											<a href="https://www.linkedin.com/in/guptasaksham/" target="_blank"><img src="images/saksham.jpeg" width = 200px height = 200px style="border-radius: 50%"/></a>
+											<a href="https://www.linkedin.com/in/guptasaksham/" target="_blank">
+												<h3 style="margin: 20px;">Saksham Gupta</h3>
+											</a>
+										</div>
+									</div>
+							</div>
+	
+							<div class="column">
+								<div class="col-1-2 t-center">
+										<div class="wrap-col">
+											<a href="https://www.linkedin.com/in/pronnoygoswami/" target="_blank"><img src="images/pronnoy.jpg" width = 200px height = 200px style="border-radius: 50%"/></a>
+											<a href="https://www.linkedin.com/in/pronnoygoswami/" target="_blank">
+												<h3 style="margin: 20px;">Pronnoy Goswami</h3>
+											</a>
+										</div>
+									</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+
+	<section class="content-box box-3" id="results">
+		<div class="zerogrid">
+			<div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;">
+				<!--Start Box-->
+				<hr class="line-2">
+				<h2 style="margin-bottom:20px">Results</h2>
+				<div class="row">
+						<div class="col-1-5 t-center">
+							<img src="images/i_00000.jpg" style="width:98%" />
+						</div>
+						<div class="col-1-5 t-center">
+							<img src="images/i_00015.jpg" style="width:98%" />
+						</div>
+						<div class="col-1-5 t-center">
+							<img src="images/i_00028.jpg" style="width:98%" />
+						</div>
+						<div class="offsetonlyonmobile">
+						</div>
+						<div class="col-1-5 t-center">
+								<img src="images/i_00021.jpg" style="width:98%" />
+						</div>
+						<div class="col-1-5 t-center">
+							<img src="images/i_00039.jpg" style="width:98%" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-1-5 t-center">
+							<img src="images/00000.png" style="width:98%" />
+						</div>
+						<div class="col-1-5 t-center">
+							<img src="images/00015.png" style="width:98%" />
+						</div>
+						<div class="col-1-5 t-center">
+							<img src="images/00028.png" style="width:98%" />
+						</div>
+						<div class="offsetonlyonmobile">
+						</div>
+						<div class="col-1-5 t-center">
+								<img src="images/00021.png" style="width:98%" />
+						</div>
+						<div class="col-1-5 t-center">
+							<img src="images/00039.png" style="width:98%" />
+						</div>
+					</div>
+					<div>Original Frames and their Segmentation Masks</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="content-box box-3" id="datasets">
+		<div class="zerogrid">
+			<div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;margin-bottom:100px;">
+				<!--Start Box-->
+				<hr class="line-2">
+				<h2 style="margin-bottom:20px">Datasets</h2>
+				<article>
+					<div class="row">
+						<!-- <h3 style="margin-bottom: 20px">Pre-Computed Results</h3> -->
+						<div class="col-1-2 t-center">
+							<a class="waves-effect waves-light btn-large" style="width:90%" href="https://davischallenge.org/davis2017/code.html">DAVIS</a>
+						</div>
+						<div class="col-1-2 t-center">
+							<a class="waves-effect waves-light btn-large" style="width:90%" href="https://youtube-vos.org/dataset/download">YouTube-VOS</a>
+						</div>
+					</div>
+			</div>
+			</article>
+		</div>
+		</div>
+	</section>
+
+	<section class="content-box box-3" id="demo">
+			<div class="zerogrid">
+				<article>
+					<div class="row t-center" style="line-height: 1.5">
+						<hr class="line-2">
+						<h2 style="margin-bottom:20px">Demo Applications</h2>
+						<div class="apps" style="text-align: left">
+							<ol>
+								<li style="font-weight: bold">
+										1. Machine Learned Bokeh Images and Videos
+										<div class="row" style="text-align:center; padding-top:2em">
+												<iframe width="500" height="350" src="https://www.youtube.com/embed/un50hRt_9x0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="padding-right: 2em"></iframe>
+												<iframe src="https://drive.google.com/file/d/19XEkWFlmmWMCuN6DZj1bxt2Vtgwetyn4/preview" width="500" height="350"></iframe>
+										</div>
+								</li>
+								<li style="font-weight: bold">
+										2. Retro Effect in Images (Greyscaling the background in an image or video)
+										<div class="row" style="text-align:center; padding-top:2em">
+												<img width="420" height="420" src="images/girl_1_n.png" style="padding-right: 2em">
+										</img>
+												<img width="420" height="420" src="images/girl_1.png" style="padding-right: 2em">
+									</img>
+										</div>
+										<div class="row" style="text-align:center; padding-top:2em">
+												<img width="420" height="420" src="images/girl_2_n.png" style="padding-right: 2em">
+										</img>
+												<img width="420" height="420" src="images/girl_2.png" style="padding-right: 2em">
+									</img>
+										</div>
+								</li>
+							</ol>
+							
+
+						</div>
+						
+					</div>
+				</article>
+			</div>
+	</div>
+	</section>
+
+
+	<section class="content-box box-3" id="TimeLine">
+			<div class="zerogrid">
+				<article>
+					<div class="row t-center" style="line-height: 1.5">
+						<hr class="line-2">
+						<h2 style="margin-bottom:20px">Time Line</h2>
+						<div style="text-align:justify">
+							<div style="padding-right: 2em; padding-top:1em; text-align:center">
+										<img width="900" height="600" src="images/timeline.png"></img>
+										<figcaption style="padding-top:0.5em">Figure: Time Line of Milestones and Deliverables</figcaption>
+								</div>
+
+						</div>
+					</div>
+				</article>
+			</div>
+			</div>
+		</section>
+	</div>
+	<div style="text-align: right">
+		<p> Theme Credits: <a href="http://www.vision.ee.ethz.ch/~cvlsegmentation/osvos/">OSVOS Website</a></p>
+	</div>
+</body>
+
+</html>
