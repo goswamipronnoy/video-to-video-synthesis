@@ -1,2 +1,3 @@
-# computer_vision_project_website
-ECE 5554 Project website
+# Video-to-video synthesis
+
+Advanced Machine Learning (ECE 5824) Project Website
