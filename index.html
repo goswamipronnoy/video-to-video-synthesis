@@ -206,14 +206,14 @@
                 <div class="row">
 
 
-                  <a href="https://github.com/goswamipronnoy/video-to-video-synthesis" style="padding-right: 2em" target="_blank"><img
-                      src="./images/github.png" alt="slides" width="
+                  <a href="https://github.com/goswamipronnoy/video-to-video-synthesis" style="padding-right: 2em"
+                    target="_blank"><img src="./images/github.png" alt="slides" width="
                   30" height="60"></img>Repository </a>
                   <a href="https://docs.google.com/presentation/d/1p7FVbR2tJ86ROuZO9RSLGC6lg06aDLjmBMRPKsLu2F0/edit?usp=sharing"
-                    style="padding-right: 2em" target="_blank"><img src="./images/google_slides.png" alt="slides" width="30"
-                      height="60"></img> Google Slides </a>
-                  <a href="https://tcwang0509.github.io/vid2vid/paper_vid2vid.pdf" style="padding-right: 2em" target="_blank"><img
-                      src="./images/cvf.jpg" alt="slides" width="30" height="60"></img> Paper </a>
+                    style="padding-right: 2em" target="_blank"><img src="./images/google_slides.png" alt="slides"
+                      width="30" height="60"></img> Google Slides </a>
+                  <a href="https://tcwang0509.github.io/vid2vid/paper_vid2vid.pdf" style="padding-right: 2em"
+                    target="_blank"><img src="./images/cvf.jpg" alt="slides" width="30" height="60"></img> Paper </a>
                 </div>
               </article>
             </div>
@@ -494,16 +494,33 @@
           <hr class="line-2">
           <h2 style="margin-bottom:20px">Analysis and Benchmarks</h2>
           <div style="text-align:justify">
-            <p>We used two different pre-trained video recognition CNNs in our evaluation: I3D [9] and ResNeXt [15].</p>
+            <p>We used two different pre-trained video recognition CNNs in our evaluation: I3D [9] and ResNeXt [15]. We
+              have re-sed the benchmarks and analysis for the Human Preference Score
+              from the research paper because we were not able to use the Amazon Mechanical Turk (AMT) platform.
+              Additionally, we could not get participants for the AMT benchmarking.
+            </p>
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis1.png"></img>
+              <figcaption style="padding-top:0.5em">Table 1: Comparison between competing video-to-video synthesis
+                approaches based on FID for Cityscapes.</figcaption>
             </div>
+
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis2.png"></img>
-              <figcaption style="padding-top:0.5em">Table: Comparison between competing video-to-video synthesis
-                approaches on Cityscapes.</figcaption>
+              <figcaption style="padding-top:0.5em">Table 2: Comparison between competing video-to-video synthesis
+                approaches based on Human Preference Score for Cityscapes.</figcaption>
             </div>
           </div>
+
+          <div style="padding-right: 2em; padding-top:1em; text-align:center">
+            <img width="900" height="600" src="images/loss_generator.png"></img>
+            <figcaption style="padding-top:0.5em">Figure: Plot depicting the Generator Loss</figcaption>
+          </div>
+          <div style="padding-right: 2em; padding-top:4em; text-align:center">
+            <img width="840" height="560" src="images/loss_discriminator.png"></img>
+            <figcaption style="padding-top:0.5em">Figure: Plot depicting the Discriminator Loss</figcaption>
+          </div>
+          
         </div>
       </article>
     </div>
@@ -530,8 +547,8 @@
           </div>
           <div class="row" style="padding-top: 1.5em">
             <div class="col-1-2 t-center">
-              <a class="waves-effect waves-light btn-large" style="width:90%"
-                href="https://www.cityscapes-dataset.com/" target="_blank">Cityscapes</a>
+              <a class="waves-effect waves-light btn-large" style="width:90%" href="https://www.cityscapes-dataset.com/"
+                target="_blank">Cityscapes</a>
             </div>
             <div class="col-1-2 t-center">
               <a class="waves-effect waves-light btn-large" style="width:90%"
@@ -554,9 +571,10 @@
           <div style="text-align:justify">
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/training.gif"></img>
-              <figcaption style="padding-top:0.5em">Figure: Live training demonstration using the TensorBoard</figcaption>
+              <figcaption style="padding-top:0.5em">Figure: Live training demonstration using the TensorBoard
+              </figcaption>
             </div>
-  
+
           </div>
         </div>
       </article>
@@ -727,7 +745,8 @@
 
   </div>
   <div style="text-align: right">
-    <p> Theme Credits: <a href="http://www.vision.ee.ethz.ch/~cvlsegmentation/osvos/" target="_blank">OSVOS Website</a></p>
+    <p> Theme Credits: <a href="http://www.vision.ee.ethz.ch/~cvlsegmentation/osvos/" target="_blank">OSVOS Website</a>
+    </p>
   </div>
 </body>
 
