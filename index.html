@@ -208,9 +208,11 @@
                   <a href="https://github.com/sakshamgupta006/Awesome_Video_Object_Segmentation"
                     style="padding-right: 2em"><img src="./images/github.png" alt="slides" width="
                   30" height="60"></img>Repository </a>
-                  <a href="https://docs.google.com/presentation/d/1fL_SY6jyDygtnNN9HZjsaN_F0z_L3cfw5yw48ZNQDAw/edit?usp=sharing"
+                  <a href="https://docs.google.com/presentation/d/1p7FVbR2tJ86ROuZO9RSLGC6lg06aDLjmBMRPKsLu2F0/edit?usp=sharing"
                     style="padding-right: 2em"><img src="./images/google_slides.png" alt="slides" width="30"
                       height="60"></img> Google Slides </a>
+                  <a href="https://tcwang0509.github.io/vid2vid/paper_vid2vid.pdf" style="padding-right: 2em"><img
+                      src="./images/cvf.jpg" alt="slides" width="30" height="60"></img> Paper </a>
                 </div>
               </article>
             </div>
@@ -232,32 +234,27 @@
             <div>
               <div style="text-align:justify; padding-top: 1em; padding-bottom: 2em;">
                 <span>
-                  Segmentation is one of the most sort after problems in Computer Vision as they facilitate many
-                  applications like Augmented Reality,
-                  video editing etc. Video Object Segmentation is the holy grail of Segmentation and has seen huge
-                  influx of research papers in
-                  recent years. In this project, we plan to understand and implement all the major state-of-the-art VOS
-                  techniques using Tensorflow.
-                  Finally, we plan to create a standard go-to repository which can be used for setting up baselines and
-                  facilitating easy comparisons
-                  on standard datasets with new research and models. The repository can found on Github as <a
-                    href="https://github.com/sakshamgupta006/Awesome_Video_Object_Segmentation">Awesome_Video_Object_Segmentation.</a>
+                  The capability to model and recreate the dynamics of our visual world is essential to building
+                  intelligent agents.
+                  Apart from purely scientific interests, learning to synthesize continuous visual experiences has a
+                  wide range of
+                  applications in computer vision, robotics, and computer graphics. For example, in model-based
+                  reinforcement learning
+                  , a video synthesis model finds use in approximating visual dynamics of the world for training the
+                  agent with less
+                  amount of real experience data. Using a learned video synthesis model, one can generate realistic
+                  videos without
+                  explicitly specifying scene geometry, materials, lighting, and their dynamics, which would be
+                  cumbersome but necessary
+                  when using standard graphics rendering techniques.
                 </span>
               </div>
               <div style="text-align:left">
-                <h2 style="margin-bottom:20px; text-align:left">Motivation</h2>
+                <h2 style="margin-bottom:20px; text-align:left">Motivation "TODO"</h2>
                 <ul>
                   <li>1. Availability of Large Datasets [DAVIS, Youtube-VOS].</li>
                   <li>2. Availability of fast compute resources [GPU’s].</li>
                   <li>3. Vast number of applications [Video Editing, Augmented Reality].</li>
-                </ul>
-              </div>
-              <div style="text-align:left; padding-top: 2em">
-                <h2 style="margin-bottom:20px; text-align:left">Vision</h2>
-                <ul>
-                  <li>1. Benchmark most of the state-of-the-art techniques into one single module.</li>
-                  <li>2. Facilitate new research with easy training, testing and visualizations. </li>
-                  <li>3. Create applications like targeted scene retro videos, machine learned portrait videos. </li>
                 </ul>
               </div>
             </div>
@@ -267,8 +264,6 @@
   </div>
   </section>
 
-
-  <!--- PROBLEM FORMULATION -->
   <section class="content-box box-3" id="problemFormulation">
     <div class="zerogrid">
       <article>
@@ -276,10 +271,17 @@
           <hr class="line-2">
           <h2 style="margin-bottom:20px">Problem Formulation</h2>
           <div style="text-align:justify">
-            <div><b>Given: </b>One or few frames annotated with segmentation masks of a particular object instance from
-              the dataset.</div>
-            <div><b>Task: </b>Accurately segment the same instance in all other frames of the video.</div>
-
+            <div><b>Given: </b>Aligned input and output videos.</div>
+            <div>
+              <b>Task: </b>Learn to map input videos to the output domain at the test time:
+              <div style="text-align: justify; padding-left: 2.5em">
+                <ul>
+                  <li>1. Carefully designed Generator and Discriminator Networks.</li>
+                  <li>2. Novel spatio-temporal learning objective function.</li>
+                  <li>3. Method to multimodal video synthesis.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -287,11 +289,55 @@
     </div>
   </section>
 
+  <section class="content-box box-3" id="researchMethodology">
+    <div class="zerogrid">
+      <article>
+        <div class="row t-center" style="line-height: 1.5">
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">Research Methodology</h2>
+          <div style="text-align:justify">
+            <div class="zerogrid">
+              <article>
+                <div style="line-height: 1">
+                  <hr class="line-3">
+                  <h3 style="margin-bottom:20px; padding-top: 1em; ">1. Recap: Generative Adversarial Networks</h3>
+                  <div style="text-align:justify">
+                    <div class="row" style="text-align:center; padding-top:2em">
+                      <img width="600" height="400" src="images/GAN.png"></img>
+                      <figcaption style="padding-top: 1.5em"><b>Figure: A typical Generative Adversarial Networks
+                          Pipeline</b></figcaption>
+                      <div style="padding-top: 2em">
+                        <div class="row" style="text-align:center; padding-top:2em">
+                          <img width="600" height="400" src="images/Gan_eq.png"></img>
+                          <div style="padding-top: 2em">
+                          </div>
+                        </div>
+              </article>
+              <article>
+                <div style="line-height: 1">
+                  <hr class="line-3">
+                  <h3 style="margin-bottom:20px; padding-top: 1em; ">2. Recap: Conditional Generative Adversarial
+                    Networks</h3>
+                  <div style="text-align:justify">
+                    <div class="row" style="text-align:center; padding-top:2em">
+                      <img width="600" height="400" src="images/conditionalGAN.png"></img>
+                      <figcaption style="padding-top: 1.5em"><b>Figure: A typical Conditional Generative Adversarial
+                          Networks Pipeline</b></figcaption>
+                      <div style="padding-top: 2em">
+                        <div class="row" style="text-align:center; padding-top:2em">
+                          <img width="600" height="400" src="images/ConditionalGan_eq.png"></img>
+                          <div style="padding-top: 2em">
+                          </div>
+                        </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+  </section>
 
-
-
-
-  <!--- APPROACH-->
   <section class="content-box box-3" id="approach">
     <div class="zerogrid">
       <article>
@@ -386,8 +432,6 @@
     </div>
     </div>
   </section>
-
-
   <!--TEAM-->
   <section class="content-box box-3" id="team">
     <div class="zerogrid">
@@ -426,20 +470,20 @@
             <div class="column">
               <div class="col-1-2 t-center">
                 <div class="wrap-col">
-                  <a href="https://www.linkedin.com/in/parth-vora/" target="_blank"><img src="images/parth.jpg" width=200px
-                      height=200px style="border-radius: 50%" /></a>
+                  <a href="https://www.linkedin.com/in/parth-vora/" target="_blank"><img src="images/parth.jpg"
+                      width=200px height=200px style="border-radius: 50%" /></a>
                   <a href="https://www.linkedin.com/in/parth-vora/" target="_blank">
                     <h3 style="margin: 20px;">Parth Vora</h3>
                   </a>
                 </div>
               </div>
             </div>
-          
+
             <div class="column">
               <div class="col-1-2 t-center">
                 <div class="wrap-col">
-                  <a href="https://www.linkedin.com/in/mohak-bheda/" target="_blank"><img src="images/mohak.jpg" width=200px
-                      height=200px style="border-radius: 50%" /></a>
+                  <a href="https://www.linkedin.com/in/mohak-bheda/" target="_blank"><img src="images/mohak.jpg"
+                      width=200px height=200px style="border-radius: 50%" /></a>
                   <a href="https://www.linkedin.com/in/mohak-bheda/" target="_blank">
                     <h3 style="margin: 20px;">Mohak Bheda</h3>
                   </a>
@@ -512,10 +556,13 @@
           <h2 style="margin-bottom:20px">Datasets</h2>
           <div style="text-align:justify">
             <div style="text-align: justify; padding-top: 1.5em">
-              <p>The paper uses three different datasets to train their model. We specifically apply a pre-trained segmentation algorithm to
-              get the corresponding semantic maps on the Cityscapes dataset. We apply a pre-trained segmentation algorithm to get the corresponding semantic maps (train_A) and instance maps
-              (train_inst). DensePose/OpenPose is applied to their curated dataset consisting of random dancing videos found on YouTube to estimate the poses for each frame. We have used Python 3
-              and PyTorch for obtaining our segmentation masks.</p>
+              <p>The paper uses three different datasets to train their model. We specifically apply a pre-trained
+                segmentation algorithm to
+                get the corresponding semantic maps on the Cityscapes dataset. We apply a pre-trained segmentation
+                algorithm to get the corresponding semantic maps (train_A) and instance maps
+                (train_inst). DensePose/OpenPose is applied to their curated dataset consisting of random dancing videos
+                found on YouTube to estimate the poses for each frame. We have used Python 3
+                and PyTorch for obtaining our segmentation masks.</p>
               <p> The links to the available datasets are given below: </p>
             </div>
           </div>
