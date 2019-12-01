@@ -168,9 +168,10 @@
           <li><a href='#researchMethodology'><span>Research Methodology</span></a></li>
           <li><a href='#results'><span>Results</span></a></li>
           <li><a href='#analysis'><span>Analysis and Benchmarks</span></a></li>
-          <li><a href='#team'><span>Team</span></a></li>
           <li><a href='#datasets'><span>Datasets</span></a></li>
-          <li><a href='#TimeLine'><span>Time Line</span></a></li>
+          <li><a href='#training'><span>Training</span></a></li>
+          <li><a href='#team'><span>Team</span></a></li>
+          <li><a href='#timeline'><span>Timeline</span></a></li>
           <li><a href='#references'><span>References</span></a></li>
         </ul>
       </div>
@@ -206,14 +207,14 @@
                 <div class="row">
 
 
-                  <a href="https://github.com/sakshamgupta006/Awesome_Video_Object_Segmentation"
-                    style="padding-right: 2em"><img src="./images/github.png" alt="slides" width="
+                  <a href="https://github.com/goswamipronnoy/video-to-video-synthesis" style="padding-right: 2em"
+                    target="_blank"><img src="./images/github.png" alt="slides" width="
                   30" height="60"></img>Repository </a>
                   <a href="https://docs.google.com/presentation/d/1p7FVbR2tJ86ROuZO9RSLGC6lg06aDLjmBMRPKsLu2F0/edit?usp=sharing"
-                    style="padding-right: 2em"><img src="./images/google_slides.png" alt="slides" width="30"
-                      height="60"></img> Google Slides </a>
-                  <a href="https://tcwang0509.github.io/vid2vid/paper_vid2vid.pdf" style="padding-right: 2em"><img
-                      src="./images/cvf.jpg" alt="slides" width="30" height="60"></img> Paper </a>
+                    style="padding-right: 2em" target="_blank"><img src="./images/google_slides.png" alt="slides"
+                      width="30" height="60"></img> Google Slides </a>
+                  <a href="https://tcwang0509.github.io/vid2vid/paper_vid2vid.pdf" style="padding-right: 2em"
+                    target="_blank"><img src="./images/cvf.jpg" alt="slides" width="30" height="60"></img> Paper </a>
                 </div>
               </article>
             </div>
@@ -480,6 +481,164 @@
     </div>
     </div>
   </section>
+
+  <!--RESULTS SECTION-->
+  <section class="content-box box-3" id="results">
+    <div class="zerogrid">
+      <div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;">
+        <!--Start Box-->
+        <hr class="line-2">
+        <h2 style="margin-bottom:20px">Results</h2>
+        <div class="row">
+          <div class="col-1-5 t-center">
+            <img src="images/1.jpg" style="width:98%" />
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/2.jpg" style="width:98%" />
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/16.jpg" style="width:98%" />
+          </div>
+          <div class="offsetonlyonmobile">
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/20.jpg" style="width:98%" />
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/30.jpg" style="width:98%" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-1-5 t-center">
+            <img src="images/real_1.png" style="width:98%" />
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/real_2.png" style="width:98%" />
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/real_16.png" style="width:98%" />
+          </div>
+          <div class="offsetonlyonmobile">
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/real_20.png" style="width:98%" />
+          </div>
+          <div class="col-1-5 t-center">
+            <img src="images/real_30.png" style="width:98%" />
+          </div>
+        </div>
+        <figcaption style="padding-top:0.5em">Figure: Original Frames and their segmentation Masks for the Cityscapes dataset.</figcaption>
+      </div>
+    </div>
+
+    <div style="padding-right: 2em; padding-top:1em; text-align:center">
+      <img width="1024" height="720" src="images/result_video.gif"></img>
+      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.</figcaption>
+    </div>
+  </section>
+
+  <!-- ANALYSIS AND BENCHMARKS -->
+  <section class="content-box box-3" id="analysis">
+    <div class="zerogrid">
+      <article>
+        <div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;">
+          <!--Start Box-->
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">Analysis and Benchmarks</h2>
+          <div style="text-align:justify">
+            <p>We used two different pre-trained video recognition CNNs in our evaluation: I3D [9] and ResNeXt [15]. We
+              have re-used the benchmarks and analysis for the Human Preference Score
+              from the research paper because we were not able to use the Amazon Mechanical Turk (AMT) platform.
+              Additionally, we could not get participants for the AMT benchmarking.
+            </p>
+            <div style="padding-right: 2em; padding-top:1em; text-align:center">
+              <img width="900" height="600" src="images/analysis1.png"></img>
+              <figcaption style="padding-top:0.5em">Table 1: Comparison between competing video-to-video synthesis
+                approaches based on FID for Cityscapes.</figcaption>
+            </div>
+
+            <div style="padding-right: 2em; padding-top:1em; text-align:center">
+              <img width="900" height="600" src="images/analysis2.png"></img>
+              <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing video-to-video synthesis
+                approaches based on Human Preference Score for Cityscapes.</figcaption>
+            </div>
+          </div>
+          
+          <div style="line-height: 1">
+            <hr class="line-3">
+            <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Graphs depicting the loss functions</h3>
+          </div>
+          <div style="padding-right: 2em; padding-top: 0.8em; text-align:center">
+            <img width="900" height="600" src="images/loss_generator.png"></img>
+            <figcaption style="padding-top:0.5em">Figure: Plot depicting the Generator Loss</figcaption>
+          </div>
+          <div style="padding-right: 2em; padding-top:2em; text-align:center">
+            <img width="840" height="560" src="images/loss_discriminator.png"></img>
+            <figcaption style="padding-top:0.5em">Figure: Plot depicting the Discriminator Loss</figcaption>
+          </div>
+          
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DATASETS -->
+  <section class="content-box box-3" id="datasets">
+    <div class="zerogrid">
+      <article>
+        <div class="row t-center" style="line-height: 1.5">
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">Datasets</h2>
+          <div style="text-align:justify">
+            <div style="text-align: justify; padding-top: 1.5em">
+              <p>The paper uses three different datasets to train their model. We specifically apply a pre-trained
+                segmentation algorithm to
+                get the corresponding semantic maps on the Cityscapes dataset. We apply a pre-trained segmentation
+                algorithm to get the corresponding semantic maps (train_A) and instance maps
+                (train_inst). DensePose/OpenPose is applied to their curated dataset consisting of random dancing videos
+                found on YouTube to estimate the poses for each frame. We have used Python 3
+                and PyTorch for obtaining our segmentation masks.</p>
+              <p> The links to the available datasets are given below: </p>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 1.5em">
+            <div class="col-1-2 t-center">
+              <a class="waves-effect waves-light btn-large" style="width:90%" href="https://www.cityscapes-dataset.com/"
+                target="_blank">Cityscapes</a>
+            </div>
+            <div class="col-1-2 t-center">
+              <a class="waves-effect waves-light btn-large" style="width:90%"
+                href="http://niessnerlab.org/projects/roessler2018faceforensics.html" target="_blank">FaceForensics</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+  </section>
+
+  <!-- LIVE TRAINING -->
+  <section class="content-box box-3" id="training">
+    <div class="zerogrid">
+      <article>
+        <div class="row t-center" style="line-height: 1.5">
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">Training</h2>
+          <div style="text-align:justify">
+            <div style="padding-right: 2em; padding-top:1em; text-align:center">
+              <img width="600" height="400" src="images/training.gif"></img>
+              <figcaption style="padding-top:0.5em">Figure: Live training demonstration using the TensorBoard
+              </figcaption>
+            </div>
+
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+  </section>
+
   <!--TEAM-->
   <section class="content-box box-3" id="team">
     <div class="zerogrid">
@@ -544,148 +703,18 @@
     </div>
   </section>
 
-  <!--RESULTS SECTION-->
-  <section class="content-box box-3" id="results">
-    <div class="zerogrid">
-      <div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;">
-        <!--Start Box-->
-        <hr class="line-2">
-        <h2 style="margin-bottom:20px">Results</h2>
-        <div class="row">
-          <div class="col-1-5 t-center">
-            <img src="images/i_00000.jpg" style="width:98%" />
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/i_00015.jpg" style="width:98%" />
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/i_00028.jpg" style="width:98%" />
-          </div>
-          <div class="offsetonlyonmobile">
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/i_00021.jpg" style="width:98%" />
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/i_00039.jpg" style="width:98%" />
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-1-5 t-center">
-            <img src="images/00000.png" style="width:98%" />
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/00015.png" style="width:98%" />
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/00028.png" style="width:98%" />
-          </div>
-          <div class="offsetonlyonmobile">
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/00021.png" style="width:98%" />
-          </div>
-          <div class="col-1-5 t-center">
-            <img src="images/00039.png" style="width:98%" />
-          </div>
-        </div>
-        <div>Original Frames and their Segmentation Masks</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DATASETS -->
-  <section class="content-box box-3" id="datasets">
-    <div class="zerogrid">
-      <article>
-        <div class="row t-center" style="line-height: 1.5">
-          <hr class="line-2">
-          <h2 style="margin-bottom:20px">Datasets</h2>
-          <div style="text-align:justify">
-            <div style="text-align: justify; padding-top: 1.5em">
-              <p>The paper uses three different datasets to train their model. We specifically apply a pre-trained
-                segmentation algorithm to
-                get the corresponding semantic maps on the Cityscapes dataset. We apply a pre-trained segmentation
-                algorithm to get the corresponding semantic maps (train_A) and instance maps
-                (train_inst). DensePose/OpenPose is applied to their curated dataset consisting of random dancing videos
-                found on YouTube to estimate the poses for each frame. We have used Python 3
-                and PyTorch for obtaining our segmentation masks.</p>
-              <p> The links to the available datasets are given below: </p>
-            </div>
-          </div>
-          <div class="row" style="padding-top: 1.5em">
-            <div class="col-1-2 t-center">
-              <a class="waves-effect waves-light btn-large" style="width:90%"
-                href="https://www.cityscapes-dataset.com/">Cityscapes</a>
-            </div>
-            <div class="col-1-2 t-center">
-              <a class="waves-effect waves-light btn-large" style="width:90%"
-                href="http://niessnerlab.org/projects/roessler2018faceforensics.html">FaceForensics</a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-    </div>
-  </section>
-
-  <!-- DEMO APPLICATIONS -->
-  <section class="content-box box-3" id="demo">
-    <div class="zerogrid">
-      <article>
-        <div class="row t-center" style="line-height: 1.5">
-          <hr class="line-2">
-          <h2 style="margin-bottom:20px">Demo Applications</h2>
-          <div class="apps" style="text-align: left">
-            <ol>
-              <li style="font-weight: bold">
-                1. Machine Learned Bokeh Images and Videos
-                <div class="row" style="text-align:center; padding-top:2em">
-                  <iframe width="500" height="350" src="https://www.youtube.com/embed/un50hRt_9x0" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                    style="padding-right: 2em"></iframe>
-                  <iframe src="https://drive.google.com/file/d/19XEkWFlmmWMCuN6DZj1bxt2Vtgwetyn4/preview" width="500"
-                    height="350"></iframe>
-                </div>
-              </li>
-              <li style="font-weight: bold">
-                2. Retro Effect in Images (Greyscaling the background in an image or video)
-                <div class="row" style="text-align:center; p  adding-top:2em">
-                  <img width="420" height="420" src="images/girl_1_n.png" style="padding-right: 2em">
-                  </img>
-                  <img width="420" height="420" src="images/girl_1.png" style="padding-right: 2em">
-                  </img>
-                </div>
-                <div class="row" style="text-align:center; padding-top:2em">
-                  <img width="420" height="420" src="images/girl_2_n.png" style="padding-right: 2em">
-                  </img>
-                  <img width="420" height="420" src="images/girl_2.png" style="padding-right: 2em">
-                  </img>
-                </div>
-              </li>
-            </ol>
-
-
-          </div>
-
-        </div>
-      </article>
-    </div>
-    </div>
-  </section>
-
-
+  <!-- TIMELINE -->
   <section class="content-box box-3" id="TimeLine">
     <div class="zerogrid">
       <article>
         <div class="row t-center" style="line-height: 1.5">
           <hr class="line-2">
-          <h2 style="margin-bottom:20px">Time Line</h2>
+          <h2 style="margin-bottom:20px">Timeline (TODO: @Parth - add updated image)</h2>
           <div style="text-align:justify">
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/timeline.png"></img>
-              <figcaption style="padding-top:0.5em">Figure: Time Line of Milestones and Deliverables</figcaption>
+              <figcaption style="padding-top:0.5em">Figure: Timeline of Milestones and Deliverables</figcaption>
             </div>
 
           </div>
@@ -694,9 +723,87 @@
     </div>
     </div>
   </section>
+
+  <!-- REFERENCES -->
+  <section class="content-box box-3" id="references">
+    <div class="zerogrid">
+      <article>
+        <div class="row t-center" style="line-height: 1.5">
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">References</h2>
+          <div style="text-align:justify">
+            <div style="text-align: justify; padding-top: 1.5em">
+              <p>[1.] Marius Cordts et al. “The Cityscapes Dataset for Semantic Urban Scene Understanding”. In: Proc. of
+                the IEEE
+                Conference on Computer Vision and Pattern Recognition(CVPR). 2016. </p>
+              <p> [2] Agrim Gupta et al. “Characterizing and Improving Stability in Neural Style Transfer”. In:CoRR
+                abs/1705.02092
+                (2017). arXiv: 1705 . 02092. URL: http: // arxiv. org / abs /1705.02092.</p>
+
+              <p> [3] Andreas Rossler et al. “FaceForensics: A Large-scale Video Dataset for Forgery Detection in Human
+                Faces”.In:arXiv(2018).</p>
+
+              <p> [4] Manuel Ruder, Alexey Dosovitskiy, and ThomasBrox. “Artistic style transfer for videos”. In: CoRR
+                abs/1604.08610
+                (2016). arXiv: 1604 . 08610. URL: </p>
+
+              <p> [5] Ting-Chun Wang et al. “Video-to-video synthesis”. In:arXiv preprint arXiv:1808.06601(2018).</p>
+
+              <p> [6] M. Cordts, M. Omran, S. Ramos, T. Rehfeld, M. Enzweiler, R. Benenson, U. Franke, S. Roth, and B.
+                Schiele. The
+                Cityscapes dataset for semantic urban scene understanding. In IEEE Conference on Computer Vision and
+                Pattern
+                Recognition (CVPR), 2016. </p>
+
+              <p> [7] K. Aberman, M. Shi, J. Liao, D. Lischinski, B. Chen, and D. Cohen-Or. Deep video-based performance
+                cloning.
+                arXiv preprint arXiv:1808.06847, 2018.</p>
+
+              <p> [8] Z. Cao, T. Simon, S.-E. Wei, and Y. Sheikh. Realtime multi-person 2D pose estimation using part
+                affinity fields.
+                In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.</p>
+
+              <p> [9] J. Carreira and A. Zisserman. Quo vadis, action recognition? a new model and the kinetics dataset.
+                In IEEE
+                Conference on Computer Vision and Pattern Recognition (CVPR), 2017.</p>
+
+              <p> [10] X. Liang, L. Lee, W. Dai, and E. P. Xing. Dual motion GAN for future-flow embedded video
+                prediction. In
+                Advances in Neural Information Processing Systems (NIPS), 2017.</p>
+
+              <p> [11] A. Odena, C. Olah, and J. Shlens. Conditional image synthesis with auxiliary classifier GANs. In
+                International
+                Conference on Machine Learning (ICML), 2017.</p>
+
+              <p> [12] R. Yanagi, R. Togo, T. Ogawa and M. Haseyama, "Scene Retrieval for Video Summarization Based on
+                Text-to-Image
+                gan," 2019 IEEE International Conference on Image Processing (ICIP), Taipei, Taiwan, 2019, pp.
+                1825-1829.</p>
+
+              <p> [13] C. Yang, Z.Wang, X. Zhu, C. Huang, J. Shi, and D. Lin. Pose guided human video generation. In
+                European
+                Conference on Computer Vision (ECCV), 2018.</p>
+
+              <p> [14] X. Huang, X. Cheng, Q. Geng, B. Cao, D. Zhou, P. Wang, Y. Lin, and R. Yang. The ApolloScape
+                dataset for
+                autonomous driving. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018.</p>
+
+              </p>[15] S. Xie, R. Girshick, P. Dollár, Z. Tu, and K. He. Aggregated residual transformations for deep
+              neural networks. In
+              IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.</p>
+
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+  </section>
+
   </div>
   <div style="text-align: right">
-    <p> Theme Credits: <a href="http://www.vision.ee.ethz.ch/~cvlsegmentation/osvos/">OSVOS Website</a></p>
+    <p> Theme Credits: <a href="http://www.vision.ee.ethz.ch/~cvlsegmentation/osvos/" target="_blank">OSVOS Website</a>
+    </p>
   </div>
 </body>
 
