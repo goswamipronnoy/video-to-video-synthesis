@@ -36,7 +36,7 @@ a{color: #4C4C4C;text-decoration: none;}
 a:hover {opacity: 0.9; text-decoration: none;}
 
 h1, h2 	{font-size: 25px;line-height: 25px;color: #212121;}
-h3, h4	{font-size: 20px;line-height: 20px; font-weight: bold;}
+h3, h4	{font-size: 20px;line-height: 20px; font-weight: bold; color:#f0a958;}
 h5, h6	{font-size: 16px;line-height: 16px;color: #212121;}
 
 p{margin: 10px 0;}
