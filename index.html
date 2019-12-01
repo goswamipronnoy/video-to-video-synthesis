@@ -168,7 +168,7 @@
           <li><a href='#results'><span>Results</span></a></li>
           <li><a href='#analysis'><span>Analysis and Benchmarks</span></a></li>
           <li><a href='#datasets'><span>Datasets</span></a></li>
-          <li><a href='#training'><span>Live Training</span></a></li>
+          <li><a href='#training'><span>Training</span></a></li>
           <li><a href='#team'><span>Team</span></a></li>
           <li><a href='#timeline'><span>Timeline</span></a></li>
           <li><a href='#references'><span>References</span></a></li>
@@ -480,8 +480,13 @@
             <img src="images/real_30.png" style="width:98%" />
           </div>
         </div>
-        <div>Figure: Original Frames and their Segmentation Masks</div>
+        <figcaption style="padding-top:0.5em">Figure: Original Frames and their segmentation Masks for the Cityscapes dataset.</figcaption>
       </div>
+    </div>
+
+    <div style="padding-right: 2em; padding-top:1em; text-align:center">
+      <img width="1024" height="720" src="images/result_video.gif"></img>
+      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.</figcaption>
     </div>
   </section>
 
@@ -495,7 +500,7 @@
           <h2 style="margin-bottom:20px">Analysis and Benchmarks</h2>
           <div style="text-align:justify">
             <p>We used two different pre-trained video recognition CNNs in our evaluation: I3D [9] and ResNeXt [15]. We
-              have re-sed the benchmarks and analysis for the Human Preference Score
+              have re-used the benchmarks and analysis for the Human Preference Score
               from the research paper because we were not able to use the Amazon Mechanical Turk (AMT) platform.
               Additionally, we could not get participants for the AMT benchmarking.
             </p>
@@ -507,16 +512,20 @@
 
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis2.png"></img>
-              <figcaption style="padding-top:0.5em">Table 2: Comparison between competing video-to-video synthesis
+              <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing video-to-video synthesis
                 approaches based on Human Preference Score for Cityscapes.</figcaption>
             </div>
           </div>
-
-          <div style="padding-right: 2em; padding-top:1em; text-align:center">
+          
+          <div style="line-height: 1">
+            <hr class="line-3">
+            <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Graphs depicting the loss functions</h3>
+          </div>
+          <div style="padding-right: 2em; padding-top: 0.8em; text-align:center">
             <img width="900" height="600" src="images/loss_generator.png"></img>
             <figcaption style="padding-top:0.5em">Figure: Plot depicting the Generator Loss</figcaption>
           </div>
-          <div style="padding-right: 2em; padding-top:4em; text-align:center">
+          <div style="padding-right: 2em; padding-top:2em; text-align:center">
             <img width="840" height="560" src="images/loss_discriminator.png"></img>
             <figcaption style="padding-top:0.5em">Figure: Plot depicting the Discriminator Loss</figcaption>
           </div>
@@ -567,10 +576,10 @@
       <article>
         <div class="row t-center" style="line-height: 1.5">
           <hr class="line-2">
-          <h2 style="margin-bottom:20px">Live Training</h2>
+          <h2 style="margin-bottom:20px">Training</h2>
           <div style="text-align:justify">
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
-              <img width="900" height="600" src="images/training.gif"></img>
+              <img width="600" height="400" src="images/training.gif"></img>
               <figcaption style="padding-top:0.5em">Figure: Live training demonstration using the TensorBoard
               </figcaption>
             </div>
@@ -657,7 +666,7 @@
           <div style="text-align:justify">
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/timeline.png"></img>
-              <figcaption style="padding-top:0.5em">Figure: Time Line of Milestones and Deliverables</figcaption>
+              <figcaption style="padding-top:0.5em">Figure: Timeline of Milestones and Deliverables</figcaption>
             </div>
 
           </div>
