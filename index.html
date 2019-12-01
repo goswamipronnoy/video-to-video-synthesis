@@ -163,8 +163,8 @@
         <ul>
           <li class="active"><a href='index.html'><span>Home</span></a></li>
           <li><a href='#about'><span>About</span></a></li>
-		  <li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
-		  <li><a href='#approach'><span>Approach</span></a></li>
+          <li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
+          <li><a href='#approach'><span>Approach</span></a></li>
           <li><a href='#researchMethodology'><span>Research Methodology</span></a></li>
           <li><a href='#results'><span>Results</span></a></li>
           <li><a href='#analysis'><span>Analysis and Benchmarks</span></a></li>
@@ -331,61 +331,63 @@
                           <div style="padding-top: 2em">
                           </div>
                         </div>
-			  </article>
-			  <article>
-					<div style="line-height: 1">
-					  <hr class="line-3">
-					  <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Background: Image-to-Image Translation
-						Networks</h3>
-						<div class="row">
-							<div class="col-1-2 t-center">
-								<img src="images/im1.png" style="width:98%" />
-								<figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
-							</div>
-							<div class="col-1-2 t-center">
-								<img src="images/im2.png" style="width:100%" />
-								<figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
-							</div>	
-						</div>
-						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-							<h5><b>If we can accurately solve the problem for images, why not apply the same technique to videos?</b></h5>
-						</div>
-						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-							<h5 style="color:#5e8af2"><b>Issue: Temporal Coherence</b></h5>
-						</div>
-						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-							<img src="images/cityscapes_comparison.gif" style="width:100%" />
-							<figcaption style="padding-top: 1.5em"><b>"TODO"</b></figcaption>
-						</div>
-				</article>
-				</article>
+              </article>
+              <article>
+                <div style="line-height: 1">
+                  <hr class="line-3">
+                  <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Background: Image-to-Image Translation
+                    Networks</h3>
+                  <div class="row">
+                    <div class="col-1-2 t-center">
+                      <img src="images/im1.png" style="width:98%" />
+                      <figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+                    </div>
+                    <div class="col-1-2 t-center">
+                      <img src="images/im2.png" style="width:100%" />
+                      <figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+                    </div>
+                  </div>
+                  <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+                    <h5><b>If we can accurately solve the problem for images, why not apply the same technique to
+                        videos?</b></h5>
+                  </div>
+                  <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+                    <h5 style="color:#5e8af2"><b>Issue: Temporal Coherence</b></h5>
+                  </div>
+                  <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+                    <img src="images/cityscapes_comparison.gif" style="width:100%" />
+                    <figcaption style="padding-top: 1.5em"><b>"TODO"</b></figcaption>
+                  </div>
+              </article>
+      </article>
+    </div>
+    </div>
+    </div>
+    </article>
+    </div>
+    </div>
+  </section>
+
+  <section class="content-box box-3" id="approach">
+    <div class="zerogrid">
+      <article>
+        <div class="row t-center" style="line-height: 1.5">
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">Approach</h2>
+          <div>
+            <div style="text-align: center; padding-left: 2.5em; padding-top: 2em; padding-bottom: 1.5em;">
+              <h5 style="color:#5e8af2"><b>Add a Video Discriminator</b></h5>
             </div>
+            <span>
+              Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video
+              given the same Optical Flow.
+            </span>
           </div>
         </div>
       </article>
     </div>
     </div>
   </section>
-
-  <section class="content-box box-3" id="approach">
-		<div class="zerogrid">
-		  <article>
-			<div class="row t-center" style="line-height: 1.5">
-			  <hr class="line-2">
-			  <h2 style="margin-bottom:20px">Approach</h2>
-			  <div>
-				<div style="text-align: center; padding-left: 2.5em; padding-top: 2em; padding-bottom: 1.5em;">
-					<h5 style="color:#5e8af2"><b>Add a Video Discriminator</b></h5>
-				</div>
-				<span>
-					Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video given the same Optical Flow.
-				</span>
-			  </div>
-			</div>
-		  </article>
-		</div>
-	</div>
-	</section>
 
   <section class="content-box box-3" id="approach">
     <div class="zerogrid">
@@ -528,13 +530,15 @@
             <img src="images/real_30.png" style="width:98%" />
           </div>
         </div>
-        <figcaption style="padding-top:0.5em">Figure: Original Frames and their segmentation Masks for the Cityscapes dataset.</figcaption>
+        <figcaption style="padding-top:0.5em">Figure: Original Frames and their segmentation Masks for the Cityscapes
+          dataset.</figcaption>
       </div>
     </div>
 
     <div style="padding-right: 2em; padding-top:1em; text-align:center">
       <img width="1024" height="720" src="images/result_video.gif"></img>
-      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.</figcaption>
+      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.
+      </figcaption>
     </div>
   </section>
 
@@ -552,7 +556,45 @@
               from the research paper because we were not able to use the Amazon Mechanical Turk (AMT) platform.
               Additionally, we could not get participants for the AMT benchmarking.
             </p>
-            <div style="padding-right: 2em; padding-top:1em; text-align:center">
+
+            <div style="line-height: 1">
+              <hr class="line-3">
+              <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Evaluation Metrics</h3>
+            </div>
+
+            <h4>1. Human Performance Score</h4>
+            <div style="text-align: justify; padding-left: 2.5em; padding-top: 0.8em">
+              <ul>
+                <li> (a.) It is a human subjective test for evaluating quality of synthesized video.</li>
+                <li> (b.) The research paper uses Amazon Mechanical Turk (AMT).</li>
+                <li> (c.) The worker is first shown two videos at a time (results synthesized by two different
+                  algorithms).</li>
+                <li> (d.) The worker is then asked which one looks more like a video captured by a real camera.</li>
+              </ul>
+            </div>
+
+            <h4 style="padding-top: 2em;">2. Fréchet Inception Distance (FID)</h4>
+            <div style="text-align: justify; padding-left: 2.5em; padding-top: 0.8em; padding-bottom: 2em;">
+              <ul>
+                <li> (a.) Uses a pre-trained video recognition CNN as a feature extractor after removing the last few
+                  layers from the network.</li>
+                <li> (b.) For each video, extract a spatio-temporal feature map with this CNN.</li>
+                <li> (c.) Compute Mean µ˜ and covariance Σ˜ for the feature vectors.</li>
+              </ul>
+              <p> The FID is then calculated as follows: </p>
+              <div style="align-content: center; padding-left: 15em;"><img width="320" height="180"
+                  src="images/fidEqn.png"></img></div>
+
+
+
+            </div>
+
+            <div style="line-height: 1">
+              <hr class="line-3">
+              <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Benchmarking Results</h3>
+            </div>
+
+            <div style="padding-right: 2em; padding-top:0.5em; text-align:center">
               <img width="900" height="600" src="images/analysis1.png"></img>
               <figcaption style="padding-top:0.5em">Table 1: Comparison between competing video-to-video synthesis
                 approaches based on FID for Cityscapes.</figcaption>
@@ -560,11 +602,12 @@
 
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis2.png"></img>
-              <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing video-to-video synthesis
+              <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing
+                video-to-video synthesis
                 approaches based on Human Preference Score for Cityscapes.</figcaption>
             </div>
           </div>
-          
+
           <div style="line-height: 1">
             <hr class="line-3">
             <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Graphs depicting the loss functions</h3>
@@ -577,7 +620,7 @@
             <img width="840" height="560" src="images/loss_discriminator.png"></img>
             <figcaption style="padding-top:0.5em">Figure: Plot depicting the Discriminator Loss</figcaption>
           </div>
-          
+
         </div>
       </article>
     </div>
