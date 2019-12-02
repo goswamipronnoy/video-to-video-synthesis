@@ -355,7 +355,7 @@
 						</div>
 						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
 							<img src="images/cityscapes_comparison.gif" style="width:100%" />
-							<figcaption style="padding-top: 1.5em"><b>"TODO"</b></figcaption>
+							<figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
 						</div>
 				</article>
 				</article>
@@ -367,120 +367,75 @@
     </div>
   </section>
 
+
+  <!--APPROACH SECTION-->
   <section class="content-box box-3" id="approach">
 		<div class="zerogrid">
 		  <article>
-			<div class="row t-center" style="line-height: 1.5">
-			  <hr class="line-2">
-			  <h2 style="margin-bottom:20px">Approach</h2>
-			  <div>
-				<div style="text-align: center; padding-left: 2.5em; padding-top: 2em; padding-bottom: 1.5em;">
-					<h5 style="color:#5e8af2"><b>Add a Video Discriminator</b></h5>
-				</div>
-				<span>
-					Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video given the same Optical Flow.
-				</span>
-			  </div>
-			</div>
-		  </article>
-		</div>
-	</div>
-	</section>
-
-  <section class="content-box box-3" id="approach">
-    <div class="zerogrid">
-      <article>
         <div class="row t-center" style="line-height: 1.5">
           <hr class="line-2">
           <h2 style="margin-bottom:20px">Approach</h2>
-          <div style="text-align:justify">
-            Since a lot of new research in the field of Video Object Segmentation (VOS) is taking place continuously, so
-            we decided to create
-            a standard Github repository Awesome_Video_Object_Segmentation, which will serve as a go-to repo for
-            establishing previous baselines
-            on different datasets and models. Our main function take arguments like approach, dataset, models, weights
-            etc. to produce accuracy scores and metrics so that easy comparison can be facilitated.
+          <div>
+          <div style="text-align: center; padding-left: 2.5em; padding-top: 2em; padding-bottom: 1.5em;">
+            <h5 style="color:#5e8af2"><b>Add a Video Discriminator</b></h5>
           </div>
-          <div class="row" style="text-align:center; padding-top:2em">
-            <img width="800" height="420" src="images/plug_n_play.png"></img>
-            <figcaption>Figure: Plug 'n' Play Pipleline</figcaption>
-            <div style="padding-top: 2em">
-              <h2><b>Approaches Integrated</b></h2>
-            </div>
-            <div>
-            </div>
-
-            <div>
-              <div style="text-align: justify; padding-top: 1.5em">
-                <h2 style="margin-bottom:20px">1. OSVOS: One-Shot Video Object Segmentation</h2>
-                This research paper deals with the task of semi-supervised video object segmentation problem. It
-                proposes One-Shot Video Segmentation method based on a fully-convolutional neural network which trans-
-                fers the semantic information learned on ImageNet to solve the problem of background and foreground
-                segmentation. It adapts a CNN that is pre-trained on image recognition for video object segmentation.
-                Finally, it is fine-tuned on a particular object that is manually segmented in a frame.
-                <div style="padding-right: 2em; padding-top:1em; text-align:center">
-                  <img width="420" height="420" src="images/OSVOS.png"></img>
-                  <figcaption>Figure: OSVOS: One-Shot Video Object Segmentation</figcaption>
-                </div>
-              </div>
-
-              <div style="text-align: justify; padding-top: 1.5em">
-                <h2 style="margin-bottom:20px">2. MaskTrack: Learning Video Object Segmentation from static images</h2>
-                This research paper proposes a approach to solve the problem of VOS as a guided instance segmentation.
-                It uses existing semantic labelling ConvNets and trains them for object segmentation for each frame of
-                the video. It further solves the problem of instance level recognition using (a.) offline training,
-                which guides the network towards the region of interest obtained from the previous frame mask, and (b.)
-                online training, fine-tuning of attributes so that, the model learns the specific instance properly.
-                Also, this method is agnostic of the annotation method making the system robust for various
-                applications.
-                <div style="padding-right: 2em; padding-top:1em; text-align:center">
-                  <img width="420" height="420" src="images/MaskTrack.png"></img>
-                  <figcaption style="padding-top:0.5em">Figure: MaskTrack</figcaption>
-                </div>
-              </div>
-
-              <div style="text-align: justify; padding-top: 1.5em">
-                <h2 style="margin-bottom:20px">3. VS-ReID: Video Object Segmentation with Re-identification</h2>
-                <p>This research paper presents a framework (VS-ReID) to over- come the challenges of temporal
-                  continuity while propagating masks between the frames. These being (a.) drifting, and (b.) inabil- ity
-                  to handle large displacements which are solved by preventing the target from being lost using adaptive
-                  object re-identification.</p>
-                <p>The VS-ReID model consists of two modules. Firstly, a mask propagation module which transfers the
-                  probability map of the pre- dicted frames to the neighboring frames. Secondly, a reidentification
-                  module which retrieves the missing instances during the mask prop- agation process. After this, the
-                  work proposes an algorithm called VS-ReID that iteratively combines the previous two masks for all the
-                  instances of the video.</p>
-
-                <div style="padding-right: 2em; padding-top:1em; text-align:center">
-                  <img width="420" height="420" src="images/vsreid.png"></img>
-                  <figcaption style="padding-top:0.5em">Figure: VS-ReID: Video Object Segmentation with
-                    Re-identification</figcaption>
-                </div>
-              </div>
-
-              <div style="text-align: justify; padding-top: 1.5em">
-                <h2 style="margin-bottom:20px">4. MaskRNN: Instance Level Video Object Segmentation</h2>
-                <p>This paper uses recurrent neural networks motivated by the fact that frames are time-dependent in a
-                  video sequence. Since, the frames are time-dependent the prediction of the previous frame influences
-                  the prediction of the current frame. Then an optical flow is computed between the two frames. Further,
-                  this learned optical flow is fed to the N deep neural networks, one for each object, to warp the
-                  previous prediction to align with the current frame in the video.</p>
-                <p>Each deep neural network consists of two parts: (a.) a binary seg- mentation net, which predicts the
-                  segmentation mask to be applied and (b.) an object localization net, which performs the bounding box
-                  regression. Once, the segmentation mask and the bounding box regression are obtained they are further
-                  merged to create a binary segmentation mask. These binary segmentation’s are merged for each of the N
-                  objects at the time of testing using the argmax operation.</p>
-                <div style="padding-right: 2em; padding-top:1em; text-align:center">
-                  <img width="420" height="420" src="images/MaskRNN.png"></img>
-                  <figcaption style="padding-top:0.5em">Figure: MaskRNN</figcaption>
-                </div>
-              </div>
-            </div>
+          <span>
+            Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video given the same Optical Flow.
+          </span>
           </div>
+        </div>
+
+        <div style="line-height: 1">
+          <hr class="line-3">
+          <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">1. Conventions</h3>
+          <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+            <img src="images/conventions.png" style="width:60%;" />
+          </div>
+        </div>
+
+        <div style="line-height: 1">
+          <hr class="line-3">
+          <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">2. Goal</h3>
+          <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+            <img src="images/goal_statement.png" style="width:80%;" />
+          </div>
+          <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+            <img src="images/goal.png" style="width:20%;" />
+            <figcaption style="padding-top: 1.5em">Figure:"TODO"</figcaption>
+          </div>
+        </div>
+
+        <div style="line-height: 1">
+          <hr class="line-3">
+          <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">3. Sequential Generator</h3>
+          <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+            <img src="images/seqGen.png" style="width:40%;" />
+            <figcaption style="padding-top: 1.5em">Figure:"TODO"</figcaption>
+          </div>
+          <div style=" padding-left: 24.5em; padding-top: 2em">
+            <img src="images/sequentialGen.png" style="width:60%;" />
+            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+          </div>
+          <div style="text-align: center; padding-top: 2em">
+            <span>
+            <b>Intution: </b>Wrap the current frame using optical flow from the current frame to generate an estimate of the next frame.
+            </span>
+          </div>
+          <div style=" padding-left: 24.5em; padding-top: 2em">
+            <img src="images/flow_eq.png" style="width:60%;" />
+            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+          </div>
+          <div style=" padding-left: 24.5em; padding-top: 2em">
+            <img src="images/flow_loss.png" style="width:60%;" />
+            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+          </div>
+        </div>
+
+
       </article>
-    </div>
-    </div>
-  </section>
+	  </div>
+	</section>
+
 
   <!--RESULTS SECTION-->
   <section class="content-box box-3" id="results">
