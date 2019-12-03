@@ -164,8 +164,8 @@
           <li class="active"><a href='index.html'><span>Home</span></a></li>
           <li><a href='#about'><span>About</span></a></li>
           <li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
+          <li><a href='#background'><span>Background</span></a></li>
           <li><a href='#approach'><span>Approach</span></a></li>
-          <li><a href='#researchMethodology'><span>Research Methodology</span></a></li>
           <li><a href='#results'><span>Results</span></a></li>
           <li><a href='#analysis'><span>Analysis and Benchmarks</span></a></li>
           <li><a href='#datasets'><span>Datasets</span></a></li>
@@ -355,8 +355,16 @@
 						</div>
 						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
 							<img src="images/cityscapes_comparison.gif" style="width:100%" />
-							<figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
-						</div>
+              <figcaption style="padding-top: 1.5em">Figure: Top Left: <b>Input Segmentation Mask</b>,
+                                                                Top Right: <b>pix2pix</b>, 
+                                                                Bottom Left: <b>COVST</b>, 
+                                                                Bottom Right: <b>Video-to-Video</b></figcaption>
+            </div>
+            <div style="text-align:center">
+              <p>
+              Note: Here both pix2pix and COVST struggles to maintain temporal coherence while video-to-video synthesis gracefully
+              handles it.
+              </p>
 				</article>
 				</article>
             </div>
@@ -435,9 +443,11 @@
         <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">4. Conditional Image Discriminator</h3>
-          <span>
-            Ensure's the output frame resembles a real image.
-          </span>
+          <div style="text-align:justify">
+            <p>
+              Ensure's the output frame resembles a real image.
+            </p>
+          </div>
           <div class="row">
             <div class="col-1-2 t-center">
               <img src="images/conditional_dis.png" style="width:70%; height:300px" />
@@ -457,9 +467,11 @@
         <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">5. Conditional Video Discriminator</h3>
-          <span>
+          <div style="text-align:justify">
+            <p>
             Ensure's that consecutive output frames resemble the temporal dynamics of a real video given the same optical flow.
-          </span>
+            </p>
+          </div>
           <div class="row">
             <div class="col-1-2 t-center">
               <img src="images/discriminator.gif" style="width:70%; height:300px" />
@@ -492,11 +504,11 @@
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">7. Genearting High-Res Videos</h3>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-            <img src="images/learning_obj.png" style="width:70%;" />
+            <img src="images/high_res1.png" style="width:70%;" />
             <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
           </div>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-            <img src="images/learning.gif" style="width:60%; height:550px" />
+            <img src="images/high_res2.png" style="width:70%; " />
             <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
         </div>
 
