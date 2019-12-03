@@ -163,8 +163,8 @@
         <ul>
           <li class="active"><a href='index.html'><span>Home</span></a></li>
           <li><a href='#about'><span>About</span></a></li>
-		  <li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
-		  <li><a href='#approach'><span>Approach</span></a></li>
+          <li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
+          <li><a href='#approach'><span>Approach</span></a></li>
           <li><a href='#researchMethodology'><span>Research Methodology</span></a></li>
           <li><a href='#results'><span>Results</span></a></li>
           <li><a href='#analysis'><span>Analysis and Benchmarks</span></a></li>
@@ -360,6 +360,10 @@
 				</article>
 				</article>
             </div>
+            <span>
+              Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video
+              given the same Optical Flow.
+            </span>
           </div>
         </div>
       </article>
@@ -483,13 +487,15 @@
             <img src="images/real_30.png" style="width:98%" />
           </div>
         </div>
-        <figcaption style="padding-top:0.5em">Figure: Original Frames and their segmentation Masks for the Cityscapes dataset.</figcaption>
+        <figcaption style="padding-top:0.5em">Figure: Original Frames and their segmentation Masks for the Cityscapes
+          dataset.</figcaption>
       </div>
     </div>
 
     <div style="padding-right: 2em; padding-top:1em; text-align:center">
       <img width="1024" height="720" src="images/result_video.gif"></img>
-      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.</figcaption>
+      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.
+      </figcaption>
     </div>
   </section>
 
@@ -507,7 +513,45 @@
               from the research paper because we were not able to use the Amazon Mechanical Turk (AMT) platform.
               Additionally, we could not get participants for the AMT benchmarking.
             </p>
-            <div style="padding-right: 2em; padding-top:1em; text-align:center">
+
+            <div style="line-height: 1">
+              <hr class="line-3">
+              <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Evaluation Metrics</h3>
+            </div>
+
+            <h4>1. Human Performance Score</h4>
+            <div style="text-align: justify; padding-left: 2.5em; padding-top: 0.8em">
+              <ul>
+                <li> (a.) It is a human subjective test for evaluating quality of synthesized video.</li>
+                <li> (b.) The research paper uses Amazon Mechanical Turk (AMT).</li>
+                <li> (c.) The worker is first shown two videos at a time (results synthesized by two different
+                  algorithms).</li>
+                <li> (d.) The worker is then asked which one looks more like a video captured by a real camera.</li>
+              </ul>
+            </div>
+
+            <h4 style="padding-top: 2em;">2. Fréchet Inception Distance (FID)</h4>
+            <div style="text-align: justify; padding-left: 2.5em; padding-top: 0.8em; padding-bottom: 2em;">
+              <ul>
+                <li> (a.) Uses a pre-trained video recognition CNN as a feature extractor after removing the last few
+                  layers from the network.</li>
+                <li> (b.) For each video, extract a spatio-temporal feature map with this CNN.</li>
+                <li> (c.) Compute Mean µ˜ and covariance Σ˜ for the feature vectors.</li>
+              </ul>
+              <p> The FID is then calculated as follows: </p>
+              <div style="align-content: center; padding-left: 15em;"><img width="320" height="180"
+                  src="images/fidEqn.png"></img></div>
+
+
+
+            </div>
+
+            <div style="line-height: 1">
+              <hr class="line-3">
+              <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Benchmarking Results</h3>
+            </div>
+
+            <div style="padding-right: 2em; padding-top:0.5em; text-align:center">
               <img width="900" height="600" src="images/analysis1.png"></img>
               <figcaption style="padding-top:0.5em">Table 1: Comparison between competing video-to-video synthesis
                 approaches based on FID for Cityscapes.</figcaption>
@@ -515,11 +559,12 @@
 
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis2.png"></img>
-              <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing video-to-video synthesis
+              <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing
+                video-to-video synthesis
                 approaches based on Human Preference Score for Cityscapes.</figcaption>
             </div>
           </div>
-          
+
           <div style="line-height: 1">
             <hr class="line-3">
             <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Graphs depicting the loss functions</h3>
@@ -532,7 +577,7 @@
             <img width="840" height="560" src="images/loss_discriminator.png"></img>
             <figcaption style="padding-top:0.5em">Figure: Plot depicting the Discriminator Loss</figcaption>
           </div>
-          
+
         </div>
       </article>
     </div>
