@@ -171,7 +171,7 @@
           <li><a href='#datasets'><span>Datasets</span></a></li>
           <li><a href='#training'><span>Training</span></a></li>
           <li><a href='#team'><span>Team</span></a></li>
-          <li><a href='#timeline'><span>Timeline</span></a></li>
+          <li><a href='#timeLine'><span>Timeline</span></a></li>
           <li><a href='#references'><span>References</span></a></li>
         </ul>
       </div>
@@ -202,6 +202,7 @@
                 <div class="col-1-2 t-center">
                   <img src="images/vid-gifs/cityscapes_change_styles.gif" style="width:98%" />
                 </div>
+                <figcaption style="padding-top: 1.5em"><b>Genearating different styles given an input segmentation mask.</b></figcaption>
               </div>
               <article>
                 <div class="row">
@@ -255,7 +256,7 @@
                 </span>
               </div>
               <div style="text-align:left">
-                <h2 style="margin-bottom:20px; text-align:left">Motivation</h2>
+                <h2 style="margin-bottom:20px; text-align:left; padding-left: 2.5em;">Motivation</h2>
                 <ul>
                   <li>1. Multiple real world applications like generating realistic videos in different styles, which can be used to tarin self-driving cars.</li>
                   <li>2. Availability of fast compute resources [GPU’s] enabling us to tarin such compute intensive models.</li>
@@ -439,11 +440,11 @@
 
         <div style="line-height: 1">
           <hr class="line-3">
-          <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">3. Sequential Generator</h3>
+          <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Sequential Generator</h3>
           <p>
             They assume the video frames can be generated sequentially, and the generation of the
             t-th frame only depends on three factors:
-            <ol>
+            <ol style="padding-left: 2.5em">
               <li>1. Current source frame</li>
               <li>2. Past L source frames</li>
               <li>3. Past L generated frames</li>
@@ -615,7 +616,7 @@ assumption where they factorize the conditional distribution to a product form g
 
     <div style="padding-right: 2em; padding-top:1em; text-align:center">
       <img width="1024" height="720" src="images/result_video.gif"></img>
-      <figcaption style="padding-top:2em">Figure: Video-to-video synthesis ouptut for the Cityscapes dataset.
+      <figcaption style="padding-top:2em">Figure: Trained Video-to-video synthesis ouptut for the Cityscapes dataset.
       </figcaption>
     </div>
   </section>
@@ -671,21 +672,29 @@ assumption where they factorize the conditional distribution to a product form g
               <hr class="line-3">
               <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Benchmarking Results</h3>
             </div>
-
+            <p>We trained the approach given by the authors on Cityscapes Dataset (1024) for 50 hours on RTX 2080 (8 GB VRAM) and got the 
+              following results. </p>
             <div style="padding-right: 2em; padding-top:0.5em; text-align:center">
               <img width="900" height="600" src="images/analysis1.png"></img>
               <figcaption style="padding-top:0.5em">Table 1: Comparison between competing video-to-video synthesis
-                approaches based on FID for Cityscapes.</figcaption>
+                approaches based on FID for Cityscapes. The benchmarks for both pix2pix and COVST are directly quoted form
+              the paper but the vid2vid depicts the score of our self trained model.</figcaption>
             </div>
 
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis2.png"></img>
               <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing
                 video-to-video synthesis
-                approaches based on Human Preference Score for Cityscapes.</figcaption>
+                approaches based on Human Preference Score for Cityscapes. These scores are directly quoted from the paper
+              since we did not have access to Amazon's Mechanical Turk.</figcaption>
             </div>
           </div>
-
+          <div>
+          <h5 style="color:#4BCD4B; line-height: 1.5em;"><b>Conclusion: After rigrously training our own model we were almost able to replicate the 
+            results presented by the authors, we were also able to verify the results visually. This thus proves that the approach is
+            legitimate and can be used for various applications effectively. </b>
+          </h5>
+        </div>
           <div style="line-height: 1">
             <hr class="line-3">
             <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Graphs depicting the loss functions</h3>
