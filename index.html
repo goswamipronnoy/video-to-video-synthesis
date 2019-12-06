@@ -166,6 +166,7 @@
           <li><a href='#problemFormulation'><span>Problem Formulation</span></a></li>
           <li><a href='#background'><span>Background</span></a></li>
           <li><a href='#approach'><span>Approach</span></a></li>
+          <li><a href="#procedure"><span>Procedure</span></a></li>
           <li><a href='#results'><span>Results</span></a></li>
           <li><a href='#analysis'><span>Analysis and Benchmarks</span></a></li>
           <li><a href='#datasets'><span>Datasets</span></a></li>
@@ -206,8 +207,6 @@
               </div>
               <article>
                 <div class="row">
-
-
                   <a href="https://github.com/sakshamgupta006/video-to-video-synthesis" style="padding-right: 2em"
                     target="_blank"><img src="./images/github.png" alt="slides" width="
                     30" height="60"></img>Repository (Code)</a>
@@ -259,7 +258,7 @@
                 <h2 style="margin-bottom:20px; text-align:left; padding-left: 2.5em;">Motivation</h2>
                 <ul>
                   <li>1. Multiple real world applications like generating realistic videos in different styles, which can be used to tarin self-driving cars.</li>
-                  <li>2. Availability of fast compute resources [GPU’s] enabling us to tarin such compute intensive models.</li>
+                  <li>2. Availability of fast compute resources [GPU’s] enabling us to train such compute intensive models.</li>
                   <li>3. Can be extended to create and identify Deepfakes.</li>
                 </ul>
               </div>
@@ -463,7 +462,7 @@ assumption where they factorize the conditional distribution to a product form g
           </div>
           <div style="text-align: center; padding-top: 2em">
             <span>
-            <b>Intution: </b>Wrap the current frame using optical flow from the current frame to generate an estimate of the next frame.
+            <b>Intuition: </b>Wrap the current frame using optical flow from the current frame to generate an estimate of the next frame.
             </span>
           </div>
           <div style=" padding-left: 24.5em; padding-top: 2em">
@@ -562,6 +561,24 @@ assumption where they factorize the conditional distribution to a product form g
 	  </div>
 	</section>
 
+<!--PROCEDURE SECTION-->
+<section class="content-box box-3" id="procedure">
+  <div class="zerogrid">
+    <div class="row wrap-box t-center" style="margin-left:10%;margin-right:10%;">
+      <!--Start Box-->
+      <hr class="line-2">
+      <h2 style="margin-bottom:20px">Procedure</h2>
+      <h3>
+        A detailed procedure to replicate our results is given in the following repository:
+      </h3>
+      <a href="https://github.com/sakshamgupta006/video-to-video-synthesis" style="padding-right: 2em"
+                    target="_blank"><img src="./images/github.png" alt="slides" width="
+                    60" height="60" align:"middle"></img></a>
+      <a href="https://github.com/sakshamgupta006/video-to-video-synthesis" style="padding-right: 2em"
+                    target="_blank"><center>Repository (Vid 2 Vid)</center></a>
+    </div>
+  </div>
+</section>
 
   <!--RESULTS SECTION-->
   <section class="content-box box-3" id="results">
@@ -672,7 +689,7 @@ assumption where they factorize the conditional distribution to a product form g
               <hr class="line-3">
               <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Benchmarking Results</h3>
             </div>
-            <p>We trained the approach given by the authors on Cityscapes Dataset (1024) for 50 hours on RTX 2080 (8 GB VRAM) and got the 
+            <p>We trained the approach given by the authors on Cityscapes Dataset (256) for 50 hours on RTX 2080 (8 GB VRAM) and got the 
               following results. </p>
             <div style="padding-right: 2em; padding-top:0.5em; text-align:center">
               <img width="900" height="600" src="images/analysis1.png"></img>
