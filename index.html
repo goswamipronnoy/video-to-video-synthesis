@@ -207,14 +207,17 @@
                 <div class="row">
 
 
-                  <a href="https://github.com/goswamipronnoy/video-to-video-synthesis" style="padding-right: 2em"
+                  <a href="https://github.com/sakshamgupta006/video-to-video-synthesis" style="padding-right: 2em"
                     target="_blank"><img src="./images/github.png" alt="slides" width="
-                  30" height="60"></img>Repository </a>
+                    30" height="60"></img>Repository (Code)</a>
                   <a href="https://docs.google.com/presentation/d/1p7FVbR2tJ86ROuZO9RSLGC6lg06aDLjmBMRPKsLu2F0/edit?usp=sharing"
                     style="padding-right: 2em" target="_blank"><img src="./images/google_slides.png" alt="slides"
                       width="30" height="60"></img> Google Slides </a>
                   <a href="https://tcwang0509.github.io/vid2vid/paper_vid2vid.pdf" style="padding-right: 2em"
                     target="_blank"><img src="./images/cvf.jpg" alt="slides" width="30" height="60"></img> Paper </a>
+                  <a href="https://github.com/goswamipronnoy/video-to-video-synthesis" style="padding-right: 2em"
+                    target="_blank"><img src="./images/github.png" alt="slides" width="
+                    30" height="60"></img>Repository (Website) </a>
                 </div>
               </article>
             </div>
@@ -304,6 +307,11 @@
                   <hr class="line-3">
                   <h3 style="margin-bottom:20px; padding-top: 1em; ">1. Background: Generative Adversarial Networks</h3>
                   <div style="text-align:justify">
+                    <p>
+                      Generative adversarial networks (GANs) are deep neural net architectures comprised of two nets, 
+                      pitting one against the other (thus the “adversarial”). Two neural networks contest with each other 
+                      in a game (in the sense of game theory, often but not always in the form of a zero-sum game).
+                    </p>
                     <div class="row" style="text-align:center; padding-top:2em">
                       <img width="600" height="400" src="images/GAN.png"></img>
                       <figcaption style="padding-top: 1.5em"><b>Figure: A typical Generative Adversarial Networks
@@ -321,6 +329,10 @@
                   <h3 style="margin-bottom:20px; padding-top: 1em; ">2. Background: Conditional Generative Adversarial
                     Networks</h3>
                   <div style="text-align:justify">
+                    <p>
+                      Conditional version of Generative Adversarial Nets (GAN) where both generator and discriminator are conditioned 
+                      on some data y (class label or data from some other modality).
+                    </p>
                     <div class="row" style="text-align:center; padding-top:2em">
                       <img width="600" height="400" src="images/conditionalGAN.png"></img>
                       <figcaption style="padding-top: 1.5em"><b>Figure: A typical Conditional Generative Adversarial
@@ -328,6 +340,10 @@
                       <div style="padding-top: 2em">
                         <div class="row" style="text-align:center; padding-top:2em">
                           <img width="600" height="400" src="images/ConditionalGan_eq.png"></img>
+                          <figcaption style="padding-top: 1.5em; text-align: center;"><b>Equation: Conditional GAN loss defined by Generator and 
+                            Discriminator functions. Note: Here both the Generator and Discriminator functions are conditioned on
+                            some data x.
+                          </b></figcaption>
                           <div style="padding-top: 2em">
                           </div>
                         </div>
@@ -336,15 +352,20 @@
 					<div style="line-height: 1">
 					  <hr class="line-3">
 					  <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Background: Image-to-Image Translation
-						Networks</h3>
+            Networks</h3>
+            <p>
+              Conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from
+              input image to output image, but also learn a loss function to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally
+              would require very different loss formulations.
+            </p>
 						<div class="row">
 							<div class="col-1-2 t-center">
-								<img src="images/im1.png" style="width:98%" />
-								<figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+								<img src="images/im2.png" style="width:98%" />
+								<figcaption style="padding-top: 1.5em"><b>Figure: Process to train Discriminator Network in pix2pix.</b></figcaption>
 							</div>
 							<div class="col-1-2 t-center">
-								<img src="images/im2.png" style="width:100%" />
-								<figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+								<img src="images/im1.png" style="width:100%" />
+								<figcaption style="padding-top: 1.5em"><b>Figure: Process to train Generator Network in pix2pix.</b></figcaption>
 							</div>	
 						</div>
 						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
@@ -396,6 +417,9 @@
         <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">1. Conventions</h3>
+          <p>
+            We will use the following conventions while explaining the approach:
+          </p>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
             <img src="images/conventions.png" style="width:60%;" />
           </div>
@@ -409,20 +433,32 @@
           </div>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
             <img src="images/goal.png" style="width:20%;" />
-            <figcaption style="padding-top: 1.5em">Figure:"TODO"</figcaption>
+            <figcaption style="padding-top: 1.5em">Equation: Mapping function to be learned.</figcaption>
           </div>
         </div>
 
         <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">3. Sequential Generator</h3>
+          <p>
+            They assume the video frames can be generated sequentially, and the generation of the
+            t-th frame only depends on three factors:
+            <ol>
+              <li>1. Current source frame</li>
+              <li>2. Past L source frames</li>
+              <li>3. Past L generated frames</li>
+            </ol>
+          </p>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-            <img src="images/seqGen.png" style="width:40%;" />
-            <figcaption style="padding-top: 1.5em">Figure:"TODO"</figcaption>
+            <img src="images/generator.gif" style="width:40%;" />
+            <figcaption style="padding-top: 1.5em">Figure: Sequential Frame Generation Process.</figcaption>
           </div>
+          <p>
+            To simplify the video-to-video synthesis problem, they make a Markov
+assumption where they factorize the conditional distribution to a product form given by:
+          </p>
           <div style=" padding-left: 24.5em; padding-top: 2em">
             <img src="images/sequentialGen.png" style="width:60%;" />
-            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
           </div>
           <div style="text-align: center; padding-top: 2em">
             <span>
@@ -431,11 +467,11 @@
           </div>
           <div style=" padding-left: 24.5em; padding-top: 2em">
             <img src="images/flow_eq.png" style="width:60%;" />
-            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+            <figcaption style="padding-top: 1.5em">Equation: Optical flow estimation between consecutive frames.</figcaption>
           </div>
           <div style=" padding-left: 24.5em; padding-top: 2em">
             <img src="images/flow_loss.png" style="width:60%;" />
-            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+            <figcaption style="padding-top: 1.5em">Equation: Flow Loss</figcaption>
           </div>
         </div>
         
@@ -451,17 +487,17 @@
           <div class="row">
             <div class="col-1-2 t-center">
               <img src="images/conditional_dis.png" style="width:70%; height:300px" />
-              <figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+              <figcaption style="padding-top: 1.5em"><b>Figure: Image Discriminator at different size of the generated image.</b></figcaption>
             </div>
             <div class="col-1-2 t-center">
               <img src="images/image_dis.png" style="width:100%" />
-              <figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+              <figcaption style="padding-top: 1.5em"><b>Equation: Image Discriminator classification logic.</b></figcaption>
             </div>	
           </div>
         </div>  
         <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
           <img src="images/image_loss.png" style="width:70%;" />
-          <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+          <figcaption style="padding-top: 1.5em">Equation: Discriminator Loss of the generated image.</figcaption>
         </div>
 
         <div style="line-height: 1">
@@ -475,32 +511,41 @@
           <div class="row">
             <div class="col-1-2 t-center">
               <img src="images/discriminator.gif" style="width:70%; height:300px" />
-              <figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+              <figcaption style="padding-top: 1.5em"><b>Figure: Video Discrimator, discriminating with the help of flow predictions.</b></figcaption>
             </div>
             <div class="col-1-2 t-center">
               <img src="images/video_dis.png" style="width:100%" />
-              <figcaption style="padding-top: 1.5em"><b>Figure: "TODO"</b></figcaption>
+              <figcaption style="padding-top: 1.5em"><b>Equation: Video Discriminator classification logic.</b></figcaption>
             </div>	
           </div>
         </div>  
         <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
           <img src="images/video_loss.png" style="width:80%;" />
-          <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+          <figcaption style="padding-top: 1.5em">Equation: Discriminator Loss of the generated image.</figcaption>
         </div>
 
         <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">6. Learning Objective</h3>
+          <p>
+            They train the sequential video synthesis function <b>F</b> by solving:
+          </p>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
             <img src="images/learning_obj.png" style="width:70%;" />
-            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+            <figcaption style="padding-top: 1.5em">Equation: Learning Objective</figcaption>
           </div>
+          <p>
+            where L_I is the GAN loss  on images defined by the conditional image discriminator D_I. L_V is the GAN loss
+            on <b>K</b> consecutive frames defined by D_V, and L_W is the flow estimation loss. In addition to the loss terms
+            they also use the Discrimator feature matching loss and VGG feature matching loss as they improve the convergence speed
+            and training stability.  
+          </p>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
             <img src="images/learning.gif" style="width:60%; height:550px" />
-            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+            <figcaption style="padding-top: 1.5em">Figure: Spatio-Temporal Progressive Training to optimize the Loss and Learn F.</figcaption>
           </div>
 
-        <div style="line-height: 1">
+        <!-- <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">7. Genearting High-Res Videos</h3>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
@@ -509,7 +554,7 @@
           </div>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
             <img src="images/high_res2.png" style="width:70%; " />
-            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption>
+            <figcaption style="padding-top: 1.5em">Figure: "TODO"</figcaption> -->
         </div>
 
       </article>
@@ -786,10 +831,10 @@
       <article>
         <div class="row t-center" style="line-height: 1.5">
           <hr class="line-2">
-          <h2 style="margin-bottom:20px">Timeline (TODO: @Parth - add updated image)</h2>
+          <h2 style="margin-bottom:20px">Timeline</h2>
           <div style="text-align:justify">
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
-              <img width="900" height="600" src="images/timeline.png"></img>
+              <img src="images/timeline.png"></img>
               <figcaption style="padding-top:0.5em">Figure: Timeline of Milestones and Deliverables</figcaption>
             </div>
 
