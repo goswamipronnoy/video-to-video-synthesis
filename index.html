@@ -202,7 +202,8 @@
                 <div class="col-1-2 t-center">
                   <img src="images/vid-gifs/cityscapes_change_styles.gif" style="width:98%" />
                 </div>
-                <figcaption style="padding-top: 1.5em"><b>Genearating different styles given an input segmentation mask.</b></figcaption>
+                <figcaption style="padding-top: 1.5em"><b>Genearating different styles given an input segmentation
+                    mask.</b></figcaption>
               </div>
               <article>
                 <div class="row">
@@ -231,6 +232,7 @@
 
 
 
+    <!-- ABOUT -->
     <section class="content-box box-3" id="about">
       <div class="zerogrid">
         <article>
@@ -258,8 +260,10 @@
               <div style="text-align:left">
                 <h2 style="margin-bottom:20px; text-align:left; padding-left: 2.5em;">Motivation</h2>
                 <ul>
-                  <li>1. Multiple real world applications like generating realistic videos in different styles, which can be used to tarin self-driving cars.</li>
-                  <li>2. Availability of fast compute resources [GPU’s] enabling us to tarin such compute intensive models.</li>
+                  <li>1. Multiple real world applications like generating realistic videos in different styles, which
+                    can be used to tarin self-driving cars.</li>
+                  <li>2. Availability of fast compute resources [GPU’s] enabling us to tarin such compute intensive
+                    models.</li>
                   <li>3. Can be extended to create and identify Deepfakes.</li>
                 </ul>
               </div>
@@ -270,6 +274,102 @@
   </div>
   </section>
 
+
+  <!-- LITERATURE REVIEW -->
+  <section class="content-box box-3" id="about">
+    <div class="zerogrid">
+      <article>
+        <div class="row t-center" style="line-height: 1.5">
+          <hr class="line-2">
+          <h2 style="margin-bottom:20px">Literature Review</h2>
+          <div>
+            <div style="text-align:justify; padding-top: 1em; padding-bottom: 2em;">
+              <span>
+                This research paper is the starting point to tackle the complex problem of video-to-video synthesis. Although the
+                problem of video synthesis exists in various forms namely future video prediction and unconditional video synthesis,this
+                paper presents a general-purpose solution to video-to-video synthesis. The research work is inspired by previous
+                application-specific video synthesis methods. In their work Ruder et. al[4] present an approach that transfers the style
+                from one image to a complete video sequence. The current research is a counterpart of their work to produce temporally
+                coherent feature frames, even for long duration videos. The progress of recent methods in style transfer is hampered by
+                visible flickering and highly unstable outputs. To alleviate this problem, Gupta et al.[2] characterize the instability
+                of these methods by analyzing the style transfer objective and show that the trace of the Gram matrix of the style is
+                inversely related to the stability of the model.
+              </span>
+
+              <div style="line-height: 1; padding-top: 2em;">
+                <hr class="line-3">
+                <h3 style="margin-bottom:20px; padding-top: 1em;">1. Generative Adversarial Networks (GANs)</h3>
+                  <div style="text-align:justify; line-height: 1.5em;">
+                    <span> The authors leverage GANs [16] to build their models. During GAN training, a generator and a discriminator play a zero-sum game. The goal of the generator is to produce synthetic data so that the discriminator cannot differentiate between real and the
+                          synthesized data. Additionally, various forms of data can be used as input to the generator, including noise distributions [17], images [18], categorical labels [19], and textual descriptions [20].
+                    </span>
+                  </div>
+              </div>
+
+
+              <div style="line-height: 1; padding-top: 2em;">
+                <hr class="line-3">
+                <h3 style="margin-bottom:20px; padding-top: 1em; ">2. Image-to-image translation</h3>
+                <div style="text-align:justify; line-height: 1.5em;">
+                  <span>
+                    These algorithms are used to transfer an input image from one domain to a corresponding image in another domain.
+                    There are a lot of research papers that target this domain problem like, [aa], [bb], [18], [cc]. This approach is their video counterpart.
+                    In addition to ensuring that each video frame looks photorealistic, a video synthesis model also has to produce
+                    temporally coherent frames, which is a challenging task, especially for a long duration video.
+                  </span>
+                </div>
+              </div>
+
+
+              <div style="line-height: 1; padding-top: 2em;">
+                <hr class="line-3">
+                <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Unconditional video synthesis</h3>
+                <div style="text-align:justify; line-height: 1.5em;">
+                  <span>
+                    Some recent works like [22], [23], and [24] extends the GAN framework for unconditional video synthesis, which learns a generator for converting a random vector to a video.
+                    VGAN [24] uses a spatio-temporal convolutional network. On the other hand the TGAN [23] projects a latent code to a set of latent image codes and uses an image generator
+                    to convert those latent images codes to frames.
+                  </span>
+                </div>
+              </div>
+
+
+              <div style="line-height: 1; padding-top: 2em;">
+                <hr class="line-3">
+                <h3 style="margin-bottom:20px; padding-top: 1em; ">4. Future video prediction</h3>
+                <div style="text-align:justify; line-height: 1.5em;">
+                  <span>
+                    There are many models like [21] which train on pre-observed frames and attempt to predict the future frames. Most of
+                    these models suffer from image reconstruction loss, and the resultant output is blurry and incoherent. They suffer from
+                    the classical regress-to-the-mean problem. They also fail to generate video outputs that are long in duration. They also
+                    fail to capture the optical flow and object motions across frames.
+                  </span>
+                </div>
+              </div>
+
+
+              <div style="line-height: 1; padding-top: 2em;">
+                <hr class="line-3">
+                <h3 style="margin-bottom:20px; padding-top: 1em; ">5. Video-to-video synthesis</h3>
+                <div style="text-align:justify; line-height: 1.5em;">
+                  <span>
+                    There already exist some solutions for video-to-video translation like [22] and [23]. However, they can not be
+                    considered a general-purpose solution to video translation/generation. Their architecture and design structure is
+                    problem specific and can not be extrapolated to other problems in the same domain. There also exists a set of models
+                    [24], [2], [4], that are focused on style-transfer. These papers take a reference picture and try to transfer the style
+                    from the reference picture to the output video.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM FORMULATION -->
   <section class="content-box box-3" id="problemFormulation">
     <div class="zerogrid">
       <article>
@@ -309,8 +409,9 @@
                   <h3 style="margin-bottom:20px; padding-top: 1em; ">1. Background: Generative Adversarial Networks</h3>
                   <div style="text-align:justify">
                     <p>
-                      Generative adversarial networks (GANs) are deep neural net architectures comprised of two nets, 
-                      pitting one against the other (thus the “adversarial”). Two neural networks contest with each other 
+                      Generative adversarial networks (GANs) are deep neural net architectures comprised of two nets,
+                      pitting one against the other (thus the “adversarial”). Two neural networks contest with each
+                      other
                       in a game (in the sense of game theory, often but not always in the form of a zero-sum game).
                     </p>
                     <div class="row" style="text-align:center; padding-top:2em">
@@ -320,9 +421,10 @@
                       <div style="padding-top: 2em">
                         <div class="row" style="text-align:center; padding-top:2em">
                           <img width="600" height="400" src="images/Gan_eq.png"></img>
-                          <figcaption style="padding-top: 1.5em"><b>Equation: GAN loss defined by Generator and Discriminator functions </b></figcaption>
-                          </div>
+                          <figcaption style="padding-top: 1.5em"><b>Equation: GAN loss defined by Generator and
+                              Discriminator functions </b></figcaption>
                         </div>
+                      </div>
               </article>
               <article>
                 <div style="line-height: 1">
@@ -331,7 +433,8 @@
                     Networks</h3>
                   <div style="text-align:justify">
                     <p>
-                      Conditional version of Generative Adversarial Nets (GAN) where both generator and discriminator are conditioned 
+                      Conditional version of Generative Adversarial Nets (GAN) where both generator and discriminator
+                      are conditioned
                       on some data y (class label or data from some other modality).
                     </p>
                     <div class="row" style="text-align:center; padding-top:2em">
@@ -341,58 +444,66 @@
                       <div style="padding-top: 2em">
                         <div class="row" style="text-align:center; padding-top:2em">
                           <img width="600" height="400" src="images/ConditionalGan_eq.png"></img>
-                          <figcaption style="padding-top: 1.5em; text-align: center;"><b>Equation: Conditional GAN loss defined by Generator and 
-                            Discriminator functions. Note: Here both the Generator and Discriminator functions are conditioned on
-                            some data x.
-                          </b></figcaption>
+                          <figcaption style="padding-top: 1.5em; text-align: center;"><b>Equation: Conditional GAN loss
+                              defined by Generator and
+                              Discriminator functions. Note: Here both the Generator and Discriminator functions are
+                              conditioned on
+                              some data x.
+                            </b></figcaption>
                           <div style="padding-top: 2em">
                           </div>
                         </div>
-			  </article>
-			  <article>
-					<div style="line-height: 1">
-					  <hr class="line-3">
-					  <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Background: Image-to-Image Translation
-            Networks</h3>
-            <p>
-              Conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from
-              input image to output image, but also learn a loss function to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally
-              would require very different loss formulations.
-            </p>
-						<div class="row">
-							<div class="col-1-2 t-center">
-								<img src="images/im2.png" style="width:98%" />
-								<figcaption style="padding-top: 1.5em"><b>Figure: Process to train Discriminator Network in pix2pix.</b></figcaption>
-							</div>
-							<div class="col-1-2 t-center">
-								<img src="images/im1.png" style="width:100%" />
-								<figcaption style="padding-top: 1.5em"><b>Figure: Process to train Generator Network in pix2pix.</b></figcaption>
-							</div>	
-						</div>
-						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-							<h5><b>If we can accurately solve the problem for images, why not apply the same technique to videos?</b></h5>
-						</div>
-						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-							<h5 style="color:#5e8af2"><b>Issue: Temporal Coherence</b></h5>
-						</div>
-						<div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
-							<img src="images/cityscapes_comparison.gif" style="width:100%" />
-              <figcaption style="padding-top: 1.5em">Figure: Top Left: <b>Input Segmentation Mask</b>,
-                                                                Top Right: <b>pix2pix</b>, 
-                                                                Bottom Left: <b>COVST</b>, 
-                                                                Bottom Right: <b>Video-to-Video</b></figcaption>
-            </div>
-            <div style="text-align:center">
-              <p>
-              Note: Here both pix2pix and COVST struggles to maintain temporal coherence while video-to-video synthesis gracefully
-              handles it.
-              </p>
-				</article>
-				</article>
-            </div>
-          </div>
-        </div>
+              </article>
+              <article>
+                <div style="line-height: 1">
+                  <hr class="line-3">
+                  <h3 style="margin-bottom:20px; padding-top: 1em; ">3. Background: Image-to-Image Translation
+                    Networks</h3>
+                  <p>
+                    Conditional adversarial networks as a general-purpose solution to image-to-image translation
+                    problems. These networks not only learn the mapping from
+                    input image to output image, but also learn a loss function to train this mapping. This makes it
+                    possible to apply the same generic approach to problems that traditionally
+                    would require very different loss formulations.
+                  </p>
+                  <div class="row">
+                    <div class="col-1-2 t-center">
+                      <img src="images/im2.png" style="width:98%" />
+                      <figcaption style="padding-top: 1.5em"><b>Figure: Process to train Discriminator Network in
+                          pix2pix.</b></figcaption>
+                    </div>
+                    <div class="col-1-2 t-center">
+                      <img src="images/im1.png" style="width:100%" />
+                      <figcaption style="padding-top: 1.5em"><b>Figure: Process to train Generator Network in
+                          pix2pix.</b></figcaption>
+                    </div>
+                  </div>
+                  <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+                    <h5><b>If we can accurately solve the problem for images, why not apply the same technique to
+                        videos?</b></h5>
+                  </div>
+                  <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+                    <h5 style="color:#5e8af2"><b>Issue: Temporal Coherence</b></h5>
+                  </div>
+                  <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
+                    <img src="images/cityscapes_comparison.gif" style="width:100%" />
+                    <figcaption style="padding-top: 1.5em">Figure: Top Left: <b>Input Segmentation Mask</b>,
+                      Top Right: <b>pix2pix</b>,
+                      Bottom Left: <b>COVST</b>,
+                      Bottom Right: <b>Video-to-Video</b></figcaption>
+                  </div>
+                  <div style="text-align:center">
+                    <p>
+                      Note: Here both pix2pix and COVST struggles to maintain temporal coherence while video-to-video
+                      synthesis gracefully
+                      handles it.
+                    </p>
+              </article>
       </article>
+    </div>
+    </div>
+    </div>
+    </article>
     </div>
     </div>
   </section>
@@ -400,18 +511,19 @@
 
   <!--APPROACH SECTION-->
   <section class="content-box box-3" id="approach">
-		<div class="zerogrid">
-		  <article>
+    <div class="zerogrid">
+      <article>
         <div class="row t-center" style="line-height: 1.5">
           <hr class="line-2">
           <h2 style="margin-bottom:20px">Approach</h2>
           <div>
-          <div style="text-align: center; padding-left: 2.5em; padding-top: 2em; padding-bottom: 1.5em;">
-            <h5 style="color:#5e8af2"><b>Add a Video Discriminator</b></h5>
-          </div>
-          <span>
-            Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video given the same Optical Flow.
-          </span>
+            <div style="text-align: center; padding-left: 2.5em; padding-top: 2em; padding-bottom: 1.5em;">
+              <h5 style="color:#5e8af2"><b>Add a Video Discriminator</b></h5>
+            </div>
+            <span>
+              Video Discriminator : Ensure that consecutive output frames resemble temporal dynamics of a real video
+              given the same Optical Flow.
+            </span>
           </div>
         </div>
 
@@ -456,26 +568,28 @@
           </div>
           <p>
             To simplify the video-to-video synthesis problem, they make a Markov
-assumption where they factorize the conditional distribution to a product form given by:
+            assumption where they factorize the conditional distribution to a product form given by:
           </p>
           <div style=" padding-left: 24.5em; padding-top: 2em">
             <img src="images/sequentialGen.png" style="width:60%;" />
           </div>
           <div style="text-align: center; padding-top: 2em">
             <span>
-            <b>Intution: </b>Wrap the current frame using optical flow from the current frame to generate an estimate of the next frame.
+              <b>Intution: </b>Wrap the current frame using optical flow from the current frame to generate an estimate
+              of the next frame.
             </span>
           </div>
           <div style=" padding-left: 24.5em; padding-top: 2em">
             <img src="images/flow_eq.png" style="width:60%;" />
-            <figcaption style="padding-top: 1.5em">Equation: Optical flow estimation between consecutive frames.</figcaption>
+            <figcaption style="padding-top: 1.5em">Equation: Optical flow estimation between consecutive frames.
+            </figcaption>
           </div>
           <div style=" padding-left: 24.5em; padding-top: 2em">
             <img src="images/flow_loss.png" style="width:60%;" />
             <figcaption style="padding-top: 1.5em">Equation: Flow Loss</figcaption>
           </div>
         </div>
-        
+
 
         <div style="line-height: 1">
           <hr class="line-3">
@@ -488,14 +602,16 @@ assumption where they factorize the conditional distribution to a product form g
           <div class="row">
             <div class="col-1-2 t-center">
               <img src="images/conditional_dis.png" style="width:70%; height:300px" />
-              <figcaption style="padding-top: 1.5em"><b>Figure: Image Discriminator at different size of the generated image.</b></figcaption>
+              <figcaption style="padding-top: 1.5em"><b>Figure: Image Discriminator at different size of the generated
+                  image.</b></figcaption>
             </div>
             <div class="col-1-2 t-center">
               <img src="images/image_dis.png" style="width:100%" />
-              <figcaption style="padding-top: 1.5em"><b>Equation: Image Discriminator classification logic.</b></figcaption>
-            </div>	
+              <figcaption style="padding-top: 1.5em"><b>Equation: Image Discriminator classification logic.</b>
+              </figcaption>
+            </div>
           </div>
-        </div>  
+        </div>
         <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
           <img src="images/image_loss.png" style="width:70%;" />
           <figcaption style="padding-top: 1.5em">Equation: Discriminator Loss of the generated image.</figcaption>
@@ -506,20 +622,23 @@ assumption where they factorize the conditional distribution to a product form g
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">5. Conditional Video Discriminator</h3>
           <div style="text-align:justify">
             <p>
-            Ensure's that consecutive output frames resemble the temporal dynamics of a real video given the same optical flow.
+              Ensure's that consecutive output frames resemble the temporal dynamics of a real video given the same
+              optical flow.
             </p>
           </div>
           <div class="row">
             <div class="col-1-2 t-center">
               <img src="images/discriminator.gif" style="width:70%; height:300px" />
-              <figcaption style="padding-top: 1.5em"><b>Figure: Video Discrimator, discriminating with the help of flow predictions.</b></figcaption>
+              <figcaption style="padding-top: 1.5em"><b>Figure: Video Discrimator, discriminating with the help of flow
+                  predictions.</b></figcaption>
             </div>
             <div class="col-1-2 t-center">
               <img src="images/video_dis.png" style="width:100%" />
-              <figcaption style="padding-top: 1.5em"><b>Equation: Video Discriminator classification logic.</b></figcaption>
-            </div>	
+              <figcaption style="padding-top: 1.5em"><b>Equation: Video Discriminator classification logic.</b>
+              </figcaption>
+            </div>
           </div>
-        </div>  
+        </div>
         <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
           <img src="images/video_loss.png" style="width:80%;" />
           <figcaption style="padding-top: 1.5em">Equation: Discriminator Loss of the generated image.</figcaption>
@@ -536,17 +655,20 @@ assumption where they factorize the conditional distribution to a product form g
             <figcaption style="padding-top: 1.5em">Equation: Learning Objective</figcaption>
           </div>
           <p>
-            where L_I is the GAN loss  on images defined by the conditional image discriminator D_I. L_V is the GAN loss
-            on <b>K</b> consecutive frames defined by D_V, and L_W is the flow estimation loss. In addition to the loss terms
-            they also use the Discrimator feature matching loss and VGG feature matching loss as they improve the convergence speed
-            and training stability.  
+            where L_I is the GAN loss on images defined by the conditional image discriminator D_I. L_V is the GAN loss
+            on <b>K</b> consecutive frames defined by D_V, and L_W is the flow estimation loss. In addition to the loss
+            terms
+            they also use the Discrimator feature matching loss and VGG feature matching loss as they improve the
+            convergence speed
+            and training stability.
           </p>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
             <img src="images/learning.gif" style="width:60%; height:550px" />
-            <figcaption style="padding-top: 1.5em">Figure: Spatio-Temporal Progressive Training to optimize the Loss and Learn F.</figcaption>
+            <figcaption style="padding-top: 1.5em">Figure: Spatio-Temporal Progressive Training to optimize the Loss and
+              Learn F.</figcaption>
           </div>
 
-        <!-- <div style="line-height: 1">
+          <!-- <div style="line-height: 1">
           <hr class="line-3">
           <h3 style="margin-bottom:20px; padding-top: 1em; padding-left: 0em ">7. Genearting High-Res Videos</h3>
           <div style="text-align: center; padding-left: 2.5em; padding-top: 2em">
@@ -559,8 +681,8 @@ assumption where they factorize the conditional distribution to a product form g
         </div>
 
       </article>
-	  </div>
-	</section>
+    </div>
+  </section>
 
 
   <!--RESULTS SECTION-->
@@ -672,29 +794,34 @@ assumption where they factorize the conditional distribution to a product form g
               <hr class="line-3">
               <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Benchmarking Results</h3>
             </div>
-            <p>We trained the approach given by the authors on Cityscapes Dataset (1024) for 50 hours on RTX 2080 (8 GB VRAM) and got the 
+            <p>We trained the approach given by the authors on Cityscapes Dataset (1024) for 50 hours on RTX 2080 (8 GB
+              VRAM) and got the
               following results. </p>
             <div style="padding-right: 2em; padding-top:0.5em; text-align:center">
               <img width="900" height="600" src="images/analysis1.png"></img>
               <figcaption style="padding-top:0.5em">Table 1: Comparison between competing video-to-video synthesis
-                approaches based on FID for Cityscapes. The benchmarks for both pix2pix and COVST are directly quoted form
-              the paper but the vid2vid depicts the score of our self trained model.</figcaption>
+                approaches based on FID for Cityscapes. The benchmarks for both pix2pix and COVST are directly quoted
+                form
+                the paper but the vid2vid depicts the score of our self trained model.</figcaption>
             </div>
 
             <div style="padding-right: 2em; padding-top:1em; text-align:center">
               <img width="900" height="600" src="images/analysis2.png"></img>
               <figcaption style="padding-top:0.5em; padding-bottom: 2em;">Table 2: Comparison between competing
                 video-to-video synthesis
-                approaches based on Human Preference Score for Cityscapes. These scores are directly quoted from the paper
-              since we did not have access to Amazon's Mechanical Turk.</figcaption>
+                approaches based on Human Preference Score for Cityscapes. These scores are directly quoted from the
+                paper
+                since we did not have access to Amazon's Mechanical Turk.</figcaption>
             </div>
           </div>
           <div>
-          <h5 style="color:#4BCD4B; line-height: 1.5em;"><b>Conclusion: After rigrously training our own model we were almost able to replicate the 
-            results presented by the authors, we were also able to verify the results visually. This thus proves that the approach is
-            legitimate and can be used for various applications effectively. </b>
-          </h5>
-        </div>
+            <h5 style="color:#4BCD4B; line-height: 1.5em;"><b>Conclusion: After rigrously training our own model we were
+                almost able to replicate the
+                results presented by the authors, we were also able to verify the results visually. This thus proves
+                that the approach is
+                legitimate and can be used for various applications effectively. </b>
+            </h5>
+          </div>
           <div style="line-height: 1">
             <hr class="line-3">
             <h3 style="margin-bottom:20px; padding-top: 1em; text-align: left;">Graphs depicting the loss functions</h3>
@@ -918,10 +1045,31 @@ assumption where they factorize the conditional distribution to a product form g
                 dataset for
                 autonomous driving. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018.</p>
 
-              </p>[15] S. Xie, R. Girshick, P. Dollár, Z. Tu, and K. He. Aggregated residual transformations for deep
+              <p>[15] S. Xie, R. Girshick, P. Dollár, Z. Tu, and K. He. Aggregated residual transformations for deep
               neural networks. In
               IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.</p>
 
+              <p>[16] I.Goodfellow, J.Pouget-Abadie, M.Mirza, B.Xu, D.Warde-Farley, S.Ozair, A.Courville, and Y.Bengio. Generative adversarial
+              networks. In Advances in Neural Information Processing Systems (NIPS), 2014.</p>
+              
+              <p>[17] E.Denton, S.Chintala, A.Szlam, and R.Fergus. Deepgenerative image models using a Laplacian pyramid of adversarial networks. In
+              Advances in Neural Information Processing Systems (NIPS), 2015.</p>
+
+              <p>[18] P. Isola, J.-Y. Zhu, T. Zhou, and A. A. Efros. Image-to-image translation with conditional adversarial networks. In IEEE
+              Conference on Computer Vision and Pattern Recognition (CVPR), 2017.</p>
+
+              <p>[19] T.Miyato and M.Koyama. cGANs with projection discriminator.In International Conference on Learning Representations (ICLR), 2018.</p>
+
+              <p>[20] S. Reed, Z. Akata, X. Yan, L. Logeswaran, B. Schiele, and H. Lee. Generative adversarial text to image synthesis. In International Conference on Machine Learning (ICML), 2016.</p>
+
+              <p>[21] E. L. Denton and V. Birodkar. Unsupervised learning of disentangled representations from video. In Advances in Neural Information Processing Systems (NIPS), 2017.</p>
+
+              <p>[22] M. Saito, E. Matsumoto, and S. Saito. Temporal generative adversarial nets with singular value clipping. In IEEE International Conference on Computer Vision (ICCV), 2017.</p>
+
+              <p>[23] S. Tulyakov, M.-Y. Liu, X. Yang, and J. Kautz. MoCoGAN: Decomposing motion and content for video generation. In IEEE
+              Conference on Computer Vision and Pattern Recognition (CVPR), 2018. </p>
+
+              <p>[24] C. Vondrick, H. Pirsiavash, and A. Torralba. Generating videos with scene dynamics. In Advances in Neural Information Processing Systems (NIPS), 2016. </p>
             </div>
           </div>
         </div>
